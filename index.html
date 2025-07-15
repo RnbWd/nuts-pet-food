@@ -76,7 +76,7 @@
 
       /* ---------- Scroll Offset for Anchors ---------- */
       [id] {
-        scroll-margin-top: 80px;
+        scroll-margin-top: 60px;
       }
 
       /* ---------- Motion Reduction ---------- */
@@ -355,7 +355,7 @@
       section {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 3rem 1rem;
+        padding: 1.5rem 1rem 3rem;
       }
 
       section h2 {
@@ -477,7 +477,7 @@
       }
 
       .order-buttons {
-        display: flex;
+        display: none; /* Hide on mobile to avoid duplication */
         flex-direction: column;
         gap: 1rem;
         max-width: 400px;
@@ -486,6 +486,11 @@
 
       .order-buttons .button {
         width: 100%;
+      }
+
+      /* Mobile-only WhatsApp button */
+      .mobile-order-button {
+        display: block;
       }
 
       /* ---------- Social Proof (Mobile First) ---------- */
@@ -693,6 +698,7 @@
 
         /* Buttons side by side on tablet */
         .order-buttons {
+          display: flex; /* Show on tablet and desktop */
           flex-direction: row;
           gap: 1rem;
         }
@@ -705,6 +711,11 @@
 
         .order-buttons .button {
           width: auto;
+        }
+
+        /* Hide mobile-only button on tablet and desktop */
+        .mobile-order-button {
+          display: none;
         }
 
         .button--secondary {
@@ -726,7 +737,7 @@
 
         /* Sections */
         section {
-          padding: 4rem 2rem;
+          padding: 2rem 2rem 4rem;
         }
 
         section h2 {
@@ -795,7 +806,7 @@
 
         /* Larger sections */
         section {
-          padding: 5rem 2rem;
+          padding: 2.5rem 2rem 5rem;
         }
 
         section h2 {
@@ -1314,6 +1325,22 @@
           Friday. Same-day pickup available in Ubud.
         </p>
 
+        <!-- Mobile-only WhatsApp button -->
+        <div
+          class="mobile-order-button"
+          style="text-align: center; margin-bottom: 2rem"
+        >
+          <a
+            class="button button--primary"
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener"
+          >
+            <span role="img" aria-label="Mobile phone">📱</span> Order via
+            WhatsApp
+          </a>
+        </div>
+
         <div class="order-steps">
           <div class="step">
             <div class="step-number">1</div>
@@ -1463,7 +1490,7 @@
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
-              const headerOffset = 80;
+              const headerOffset = 60;
               const elementPosition = target.offsetTop;
               const offsetPosition = elementPosition - headerOffset;
 
