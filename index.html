@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Nuts Pet Food – Hand‑crafted Natural Meals for Bali Dogs & Cats
+    </title>
+    <meta
+      name="description"
+      content="Nuts Pet Food crafts organic, human‑grade meals for Bali's beloved dogs and cats – no preservatives, all goodness."
+    />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #fefffe;
+        --bg-alt: #f8fdf9;
+        --text: #1a1a1a;
+        --accent: #2d7a42;
+        --accent-light: #4a9460;
+        --accent-dark: #1e5530;
+        --muted: #4b5563;
+        --border: #e5e7eb;
+        --white: #ffffff;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --radius: 12px;
+        --radius-sm: 6px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        overflow-x: hidden;
+        font-size: 16px;
+      }
+
+      /* ---------- Skip Link ---------- */
+      .skip-to-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: var(--accent);
+        color: var(--white);
+        padding: 8px 16px;
+        text-decoration: none;
+        border-radius: var(--radius-sm);
+        font-weight: 600;
+        z-index: 9999;
+        transform: translateY(-100%);
+        transition: transform 0.3s;
+      }
+      .skip-to-content:focus {
+        transform: translateY(0);
+      }
+
+      /* ---------- Focus Styles ---------- */
+      *:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+        border-radius: var(--radius-sm);
+      }
+
+      /* ---------- Scroll Offset for Anchors ---------- */
+      [id] {
+        scroll-margin-top: 80px;
+      }
+
+      /* ---------- Motion Reduction ---------- */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      /* ---------- Animations ---------- */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      /* ---------- Base Button Component (Mobile First) ---------- */
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: var(--radius);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        min-height: 48px; /* Touch target */
+        text-align: center;
+        white-space: nowrap;
+        max-width: 100%;
+      }
+
+      .button--primary {
+        background: var(--accent);
+        color: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .button--primary:hover {
+        background: var(--accent-dark);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .button--secondary {
+        background: var(--white);
+        color: var(--accent);
+        border: 2px solid var(--accent);
+        margin-top: 1rem;
+      }
+
+      .button--secondary:hover {
+        background: var(--accent);
+        color: var(--white);
+      }
+
+      /* ---------- Base Card Component (Mobile First) ---------- */
+      .card {
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+        border: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 1rem;
+      }
+
+      .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      }
+
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .card h3 {
+        margin: 0 0 1rem 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--accent-dark);
+        line-height: 1.3;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* ---------- Hero Section (Mobile First) ---------- */
+      header.hero {
+        text-align: center;
+        padding: 4rem 1rem 6rem;
+        background: linear-gradient(135deg, var(--bg-alt) 0%, #f0f9f2 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      header.hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 30% 20%,
+            rgba(45, 122, 66, 0.05) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 70% 80%,
+            rgba(45, 122, 66, 0.03) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+
+      header.hero h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        font-weight: 700;
+        background: linear-gradient(
+          135deg,
+          var(--accent) 0%,
+          var(--accent-light) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: fadeInUp 0.8s ease-out;
+        line-height: 1.2;
+      }
+
+      header.hero p {
+        font-size: 1.1rem;
+        color: var(--muted);
+        margin: 1.5rem auto 2rem;
+        max-width: 400px;
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+        line-height: 1.5;
+      }
+
+      .hero-cta {
+        animation: fadeInUp 0.8s ease-out 0.4s both;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+      }
+
+      /* ---------- Navigation (Mobile First) ---------- */
+      nav {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 1rem;
+        color: var(--text);
+        min-width: 48px;
+        min-height: 48px;
+        border-radius: var(--radius-sm);
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-toggle:hover {
+        background: rgba(45, 122, 66, 0.1);
+        color: var(--accent);
+      }
+
+      .nav-toggle:active {
+        transform: scale(0.95);
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        border-top: 1px solid var(--border);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        list-style: none;
+        margin: 0;
+        padding: 1rem 0;
+      }
+
+      .nav-menu a {
+        display: block;
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+        padding: 1rem 1.5rem;
+        transition: all 0.3s ease;
+        border-left: 3px solid transparent;
+        min-height: 48px;
+      }
+
+      .nav-menu a:hover {
+        color: var(--accent);
+        background: rgba(45, 122, 66, 0.05);
+        border-left-color: var(--accent);
+      }
+
+      /* ---------- Sections (Mobile First) ---------- */
+      section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 1rem;
+      }
+
+      section h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        padding: 0 1rem;
+        color: var(--accent-dark);
+        font-weight: 700;
+        text-align: center;
+        position: relative;
+        line-height: 1.3;
+        letter-spacing: -0.02em;
+      }
+
+      section h2::after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        border-radius: 3px;
+        opacity: 0.8;
+      }
+
+      /* ---------- Features (Mobile First) ---------- */
+      .features {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        grid-template-columns: 1fr;
+      }
+
+      /* ---------- Recipes (Mobile First) ---------- */
+      .recipe-list {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        grid-template-columns: 1fr;
+      }
+
+      .recipe ul {
+        margin: 0;
+        padding-left: 1rem;
+        list-style: none;
+      }
+
+      .recipe li {
+        margin-bottom: 0.6rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+
+      .recipe li::before {
+        content: '🌿';
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      /* ---------- Pricing & Order (Mobile First) ---------- */
+      .order-section {
+        background: var(--bg-alt);
+        padding: 3rem 1rem;
+        border-radius: var(--radius);
+        margin: 2rem 0;
+      }
+
+      .order-steps {
+        display: grid;
+        gap: 1.5rem;
+        margin: 2rem 0;
+        grid-template-columns: 1fr;
+      }
+
+      .step {
+        text-align: center;
+        padding: 1.5rem;
+        background: var(--white);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+      }
+
+      .step:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .step-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: var(--accent);
+        color: var(--white);
+        border-radius: 50%;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .step h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+        color: var(--accent-dark);
+      }
+
+      .step p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+        font-size: 0.9rem;
+      }
+
+      .order-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 400px;
+        margin: 2rem auto 0;
+      }
+
+      .order-buttons .button {
+        width: 100%;
+      }
+
+      /* ---------- Social Proof (Mobile First) ---------- */
+      .social-proof {
+        text-align: center;
+        padding: 2rem 1rem;
+        background: var(--white);
+        border-radius: var(--radius);
+        margin: 2rem auto;
+        box-shadow: var(--shadow);
+        max-width: 600px;
+      }
+
+      .testimonial {
+        max-width: 500px;
+        margin: 0 auto;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--muted);
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      .testimonial-author {
+        margin-top: 1rem;
+        font-weight: 600;
+        color: var(--accent-dark);
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      /* ---------- Contact (Mobile First) ---------- */
+      .contact-grid {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        grid-template-columns: 1fr;
+      }
+
+      .contact-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: var(--white);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+      }
+
+      .contact-item:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .contact-icon {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .contact-item h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+        color: var(--accent-dark);
+      }
+
+      .contact-item a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        word-break: break-word;
+      }
+
+      .contact-item a:hover {
+        color: var(--accent-dark);
+      }
+
+      .contact-item p {
+        margin: 0.5rem 0 0 0;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      /* ---------- Footer (Mobile First) ---------- */
+      footer {
+        text-align: center;
+        padding: 3rem 1rem;
+        background: var(--accent-dark);
+        color: var(--white);
+        font-size: 0.9rem;
+        margin-top: 3rem;
+      }
+
+      footer p {
+        margin: 0;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      footer a {
+        color: var(--accent-light);
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* ---------- Scroll Animations ---------- */
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+      }
+
+      .animate-on-scroll.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ========================================
+         TABLET STYLES (MIN-WIDTH: 768px)
+         ======================================== */
+      @media (min-width: 768px) {
+        /* Navigation becomes horizontal */
+        .nav-toggle {
+          display: none;
+        }
+
+        .nav-menu {
+          position: static;
+          transform: none;
+          opacity: 1;
+          visibility: visible;
+          background: none;
+          border: none;
+          box-shadow: none;
+          flex: 1;
+          display: flex;
+          justify-content: center;
+        }
+
+        .nav-menu ul {
+          flex-direction: row;
+          gap: 2rem;
+          padding: 0;
+        }
+
+        .nav-menu a {
+          padding: 0.5rem 1rem;
+          border-left: none;
+          border-radius: var(--radius-sm);
+          position: relative;
+        }
+
+        .nav-menu a::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background: var(--accent);
+          transition: all 0.3s ease;
+          transform: translateX(-50%);
+        }
+
+        .nav-menu a:hover::after {
+          width: 80%;
+        }
+
+        /* Hero section improvements */
+        header.hero {
+          padding: 6rem 2rem 8rem;
+        }
+
+        header.hero h1 {
+          font-size: 3.5rem;
+        }
+
+        header.hero p {
+          font-size: 1.2rem;
+          max-width: 600px;
+        }
+
+        /* Grid layouts for tablet */
+        .features {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+
+        .recipe-list {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+
+        .order-steps {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+        }
+
+        .contact-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+
+        /* Buttons side by side on tablet */
+        .order-buttons {
+          flex-direction: row;
+          gap: 1rem;
+        }
+
+        .button {
+          padding: 1.2rem 2.5rem;
+          font-size: 1.1rem;
+          min-width: 200px;
+        }
+
+        .order-buttons .button {
+          width: auto;
+        }
+
+        .button--secondary {
+          margin-top: 0;
+        }
+
+        /* Cards improvements */
+        .card {
+          padding: 2rem;
+        }
+
+        .card h3 {
+          font-size: 1.3rem;
+        }
+
+        .card p {
+          font-size: 1rem;
+        }
+
+        /* Sections */
+        section {
+          padding: 4rem 2rem;
+        }
+
+        section h2 {
+          font-size: 2.5rem;
+        }
+
+        /* Social proof */
+        .social-proof {
+          padding: 3rem 2rem;
+        }
+
+        .testimonial {
+          font-size: 1.1rem;
+        }
+
+        /* Order section */
+        .order-section {
+          padding: 4rem 2rem;
+        }
+
+        .order-buttons {
+          max-width: 600px;
+          gap: 1.5rem;
+        }
+
+        .step {
+          padding: 2rem;
+        }
+
+        .step-number {
+          width: 60px;
+          height: 60px;
+          font-size: 1.5rem;
+        }
+
+        .step h3 {
+          font-size: 1.2rem;
+        }
+
+        .step p {
+          font-size: 1rem;
+        }
+      }
+
+      /* ========================================
+         DESKTOP STYLES (MIN-WIDTH: 1024px)
+         ======================================== */
+      @media (min-width: 1024px) {
+        /* Hero section for desktop */
+        header.hero {
+          padding: 8rem 2rem 10rem;
+        }
+
+        header.hero h1 {
+          font-size: 4rem;
+        }
+
+        header.hero p {
+          font-size: 1.3rem;
+        }
+
+        /* Contact grid full width */
+        .contact-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        /* Larger sections */
+        section {
+          padding: 5rem 2rem;
+        }
+
+        section h2 {
+          font-size: 3rem;
+        }
+
+        /* Buttons for desktop */
+        .button {
+          padding: 1.4rem 3rem;
+          font-size: 1.2rem;
+          min-width: 250px;
+        }
+
+        /* Cards hover effects enhanced */
+        .card:hover {
+          transform: translateY(-5px);
+        }
+
+        /* Social proof larger */
+        .social-proof {
+          padding: 4rem 3rem;
+        }
+
+        .testimonial {
+          font-size: 1.2rem;
+        }
+
+        /* Order section */
+        .order-section {
+          padding: 5rem 3rem;
+        }
+
+        .order-buttons {
+          max-width: 700px;
+          gap: 2rem;
+        }
+
+        /* Footer */
+        footer {
+          padding: 4rem 2rem;
+        }
+      }
+
+      /* ========================================
+         LARGE DESKTOP STYLES (MIN-WIDTH: 1200px)
+         ======================================== */
+      @media (min-width: 1200px) {
+        header.hero h1 {
+          font-size: 5rem;
+        }
+
+        header.hero p {
+          font-size: 1.4rem;
+        }
+
+        .testimonial {
+          font-size: 1.3rem;
+        }
+
+        /* Buttons for large desktop */
+        .button {
+          padding: 1.5rem 3.5rem;
+          font-size: 1.3rem;
+          min-width: 280px;
+        }
+
+        .order-buttons {
+          max-width: 800px;
+          gap: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#about" class="skip-to-content">Skip to content</a>
+
+    <header class="hero">
+      <h1>Nuts Pet Food</h1>
+      <p>
+        Premium organic meals crafted with love in Bali.<br />Because your pets
+        deserve restaurant-quality nutrition.
+      </p>
+      <div class="hero-cta">
+        <a href="#order" class="button button--primary">
+          <span role="img" aria-label="Dog">🐕</span
+          ><span role="img" aria-label="Cat">🐱</span> Order Fresh Meals Today
+        </a>
+      </div>
+    </header>
+
+    <nav>
+      <div class="nav-container">
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span>☰</span>
+        </button>
+        <div class="nav-menu">
+          <ul>
+            <li><a href="#about">Why Nuts?</a></li>
+            <li><a href="#recipes">Our Recipes</a></li>
+            <li><a href="#order">Order Now</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="animate-on-scroll">
+      <h2>Why Choose Nuts Pet Food?</h2>
+      <div class="features">
+        <div class="card">
+          <h3>
+            <span role="img" aria-label="Meat">🥩</span> Human‑Grade Ingredients
+          </h3>
+          <p>
+            We source only the finest Bali-grown organic vegetables, free-range
+            meats, and premium proteins. Every ingredient is fresh enough for
+            your family table.
+          </p>
+        </div>
+        <div class="card">
+          <h3>
+            <span role="img" aria-label="No entry">🚫</span> Zero Preservatives
+          </h3>
+          <p>
+            Our traditional slow-cooking and craft-canning process preserves
+            nutrients naturally—no artificial additives, colors, or chemicals
+            ever touch your dog's meal.
+          </p>
+        </div>
+        <div class="card">
+          <h3>
+            <span role="img" aria-label="Sparkles">✨</span> Radiant Health
+          </h3>
+          <p>
+            Perfectly balanced omega fatty acids, antioxidants, and
+            phytonutrients promote glossy coats, healthy skin, and boundless
+            energy in every bite.
+          </p>
+        </div>
+        <div class="card">
+          <h3>
+            <span role="img" aria-label="Chef">👨‍🍳</span> Hand‑Crafted Excellence
+          </h3>
+          <p>
+            Every batch is lovingly prepared by hand in small quantities,
+            ensuring consistent quality and freshness that mass-produced food
+            simply can't match.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SOCIAL PROOF ================= -->
+    <section class="social-proof animate-on-scroll">
+      <div class="testimonial">
+        "My Golden Retriever Max has never been healthier! His coat is shinier,
+        he has more energy, and he actually gets excited at meal time. Nuts Dog
+        Food is worth every rupiah."
+      </div>
+      <div class="testimonial-author">— Sarah K., Ubud Dog Mom</div>
+
+      <div class="testimonial" style="margin-top: 2rem">
+        "I'm not good at talking, but I'm good at doing. Every batch is made
+        with love, and the food is so natural that I can eat it myself. My dogs
+        tell me it's good by how excited they get at meal time!"
+      </div>
+      <div class="testimonial-author">— Avi, Founder & Head Chef</div>
+    </section>
+
+    <!-- ================= RECIPES ================= -->
+    <section id="recipes" class="animate-on-scroll">
+      <h2>Our Artisan Pet Food Menu</h2>
+      <p
+        style="
+          text-align: center;
+          font-size: 1.1rem;
+          color: var(--muted);
+          margin-bottom: 3rem;
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      >
+        Every meal is hand-crafted with love, using only the finest ingredients
+        sourced locally in Bali. From playful puppies to wise old cats, we have
+        something special for every furry family member.
+      </p>
+
+      <!-- DOG FOOD SECTION -->
+      <div style="margin-bottom: 3rem">
+        <h3
+          style="
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+          "
+        >
+          <span role="img" aria-label="Dog">🐕</span> Premium Dog Food
+        </h3>
+        <p
+          style="
+            color: var(--muted);
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 2rem;
+          "
+        >
+          Tail-wagging nutrition for your loyal companion
+        </p>
+
+        <div class="recipe-list">
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Fish">🐟</span> Raw Chicken with Tuna
+            </h3>
+            <ul>
+              <li>Fresh chicken breast and bone</li>
+              <li>Premium tuna</li>
+              <li>Organic green beans</li>
+              <li>Fresh banana</li>
+              <li>Organic rice & seaweed</li>
+              <li>Natural vegetable oil</li>
+            </ul>
+          </article>
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Meat">🥩</span> Raw Chicken with
+              Gizzard
+            </h3>
+            <ul>
+              <li>Fresh chicken breast and bone</li>
+              <li>Nutrient-rich chicken gizzard</li>
+              <li>Organic green beans</li>
+              <li>Fresh banana</li>
+              <li>Organic rice & seaweed</li>
+              <li>Natural vegetable oil</li>
+            </ul>
+          </article>
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Chicken">🐔</span> Raw Chicken with
+              Liver
+            </h3>
+            <ul>
+              <li>Fresh chicken breast and bone</li>
+              <li>Premium chicken liver</li>
+              <li>Organic green beans</li>
+              <li>Fresh banana</li>
+              <li>Organic rice & seaweed</li>
+              <li>Natural vegetable oil</li>
+            </ul>
+          </article>
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Fire">🔥</span> Cooked Chicken with
+              Tuna
+            </h3>
+            <ul>
+              <li>Tender chicken breast and bone</li>
+              <li>Premium tuna</li>
+              <li>Sweet potato</li>
+              <li>Fresh pumpkin</li>
+              <li>Garden carrots</li>
+            </ul>
+          </article>
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Fire">🔥</span> Cooked Chicken with
+              Gizzard
+            </h3>
+            <ul>
+              <li>Tender chicken breast and bone</li>
+              <li>Nutrient-rich chicken gizzard</li>
+              <li>Sweet potato</li>
+              <li>Fresh pumpkin</li>
+              <li>Garden carrots</li>
+            </ul>
+          </article>
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Fire">🔥</span> Cooked Chicken with
+              Liver
+            </h3>
+            <ul>
+              <li>Tender chicken breast and bone</li>
+              <li>Premium chicken liver</li>
+              <li>Sweet potato</li>
+              <li>Fresh pumpkin</li>
+              <li>Garden carrots</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+      <!-- CAT FOOD SECTION -->
+      <div style="margin-bottom: 3rem">
+        <h3
+          style="
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+          "
+        >
+          <span role="img" aria-label="Cat">🐱</span> Gourmet Cat Food
+        </h3>
+        <p
+          style="
+            color: var(--muted);
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 2rem;
+          "
+        >
+          Purr-fectly balanced meals for your feline friend
+        </p>
+
+        <div class="recipe-list">
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Fish">🐟</span> Chicken with Tuna
+            </h3>
+            <ul>
+              <li>Fresh chicken breast and bone</li>
+              <li>Premium tuna</li>
+              <li>Fresh banana</li>
+              <li>Green mustard</li>
+              <li>Organic rice & seaweed</li>
+              <li>Natural vegetable oil & molasses</li>
+            </ul>
+          </article>
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Meat">🥩</span> Chicken with Gizzard
+            </h3>
+            <ul>
+              <li>Fresh chicken breast and bone</li>
+              <li>Nutrient-rich chicken gizzard</li>
+              <li>Fresh banana</li>
+              <li>Green mustard</li>
+              <li>Organic rice & seaweed</li>
+              <li>Natural vegetable oil & molasses</li>
+            </ul>
+          </article>
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Chicken">🐔</span> Chicken with Liver
+            </h3>
+            <ul>
+              <li>Fresh chicken breast and bone</li>
+              <li>Premium chicken liver</li>
+              <li>Fresh banana</li>
+              <li>Green mustard</li>
+              <li>Organic rice & seaweed</li>
+              <li>Natural vegetable oil & molasses</li>
+            </ul>
+          </article>
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Fish">🐟</span> Mackerel with Chicken
+              Liver
+            </h3>
+            <ul>
+              <li>Fresh mackerel</li>
+              <li>Premium chicken liver</li>
+              <li>Fresh banana</li>
+              <li>Green mustard</li>
+              <li>Organic rice & seaweed</li>
+              <li>Natural vegetable oil & molasses</li>
+            </ul>
+          </article>
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Ocean">🌊</span> Ocean Fish with
+              Mackerel
+            </h3>
+            <ul>
+              <li>Premium ocean fish mix</li>
+              <li>Fresh mackerel</li>
+              <li>Fresh banana</li>
+              <li>Green mustard</li>
+              <li>Organic rice & seaweed</li>
+              <li>Natural vegetable oil & molasses</li>
+            </ul>
+          </article>
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Fish">🐟</span> Sardine with Chicken
+              Gizzard
+            </h3>
+            <ul>
+              <li>Premium sardine</li>
+              <li>Nutrient-rich chicken gizzard</li>
+              <li>Fresh banana</li>
+              <li>Green mustard</li>
+              <li>Organic rice & seaweed</li>
+              <li>Natural vegetable oil & molasses</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+      <!-- PUPPY FOOD SECTION -->
+      <div style="margin-bottom: 3rem">
+        <h3
+          style="
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+          "
+        >
+          <span role="img" aria-label="Puppy">🐶</span> Puppy Growth Formula
+        </h3>
+        <p
+          style="
+            color: var(--muted);
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 2rem;
+          "
+        >
+          Special nutrition for growing puppies and their boundless energy
+        </p>
+
+        <div class="recipe-list">
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Fish">🐟</span> Chicken with Tuna
+            </h3>
+            <ul>
+              <li>Fresh chicken breast and bone</li>
+              <li>Premium tuna</li>
+              <li>Fresh spinach</li>
+              <li>Fresh banana</li>
+              <li>Organic green beans</li>
+              <li>Seaweed & natural vegetable oil</li>
+            </ul>
+          </article>
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Meat">🥩</span> Chicken with Gizzard
+            </h3>
+            <ul>
+              <li>Fresh chicken breast and bone</li>
+              <li>Nutrient-rich chicken gizzard</li>
+              <li>Fresh spinach</li>
+              <li>Fresh banana</li>
+              <li>Organic green beans</li>
+              <li>Seaweed & natural vegetable oil</li>
+            </ul>
+          </article>
+          <article class="card recipe">
+            <h3>
+              <span role="img" aria-label="Chicken">🐔</span> Chicken with Liver
+            </h3>
+            <ul>
+              <li>Fresh chicken breast and bone</li>
+              <li>Premium chicken liver</li>
+              <li>Fresh spinach</li>
+              <li>Fresh banana</li>
+              <li>Organic green beans</li>
+              <li>Seaweed & natural vegetable oil</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+      <div
+        style="
+          text-align: center;
+          margin-top: 3rem;
+          padding: 2rem;
+          background: var(--bg-alt);
+          border-radius: var(--radius);
+        "
+      >
+        <h3 style="color: var(--accent); margin-bottom: 1rem">
+          <span role="img" aria-label="Heart">💝</span> Made with Love in Bali
+        </h3>
+        <p
+          style="
+            color: var(--muted);
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+          "
+        >
+          Every recipe is carefully crafted by our head chef Avi, using
+          traditional cooking methods and the freshest local ingredients. We
+          believe your pets deserve nothing but the best.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= ORDERING ================= -->
+    <section id="order" class="animate-on-scroll">
+      <div class="order-section">
+        <h2>Fresh Delivery Across Bali</h2>
+        <p
+          style="
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+          "
+        >
+          We deliver fresh meals across
+          <strong>South & Central Bali</strong> every Monday, Wednesday &
+          Friday. Same-day pickup available in Ubud.
+        </p>
+
+        <div class="order-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Choose & Message</h3>
+            <p>
+              Select your recipes and quantities, then message us on WhatsApp
+              with your order details.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Pay Securely</h3>
+            <p>
+              Receive your invoice and pay via BCA transfer, GoPay, or cash on
+              delivery.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Fresh Delivery</h3>
+            <p>
+              We cook, seal, and deliver your meals fresh in insulated boxes
+              within 24 hours.
+            </p>
+          </div>
+        </div>
+
+        <div class="order-buttons">
+          <a
+            class="button button--primary"
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener"
+          >
+            <span role="img" aria-label="Mobile phone">📱</span> Order via
+            WhatsApp
+          </a>
+          <a class="button button--secondary" href="#contact">
+            <span role="img" aria-label="Speech bubble">💬</span> Ask Questions
+            First
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="animate-on-scroll">
+      <h2>Get in Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <span role="img" aria-label="Mobile phone">📱</span>
+          </div>
+          <h3>WhatsApp Orders</h3>
+          <a href="https://wa.me/6287861808065">+62 878-6180-8065</a>
+          <p>Quick orders & delivery updates</p>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <span role="img" aria-label="Email">📧</span>
+          </div>
+          <h3>Email Support</h3>
+          <a href="mailto:nutspetfood@gmail.com">nutspetfood@gmail.com</a>
+          <p>Questions & custom meal plans</p>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <span role="img" aria-label="Camera">📸</span>
+          </div>
+          <h3>Follow Our Pack</h3>
+          <a
+            href="https://instagram.com/nuts_petfood"
+            target="_blank"
+            rel="noopener"
+            >@nuts_petfood</a
+          >
+          <p>Daily behind-the-scenes content</p>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <span role="img" aria-label="Mobile phone">📱</span>
+          </div>
+          <h3>Owner Direct</h3>
+          <a href="https://wa.me/6281999376938">+62 819-9937-6938</a>
+          <p>Questions & direct owner contact</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2025 Nuts Pet Food – Crafted with love & sea breeze in Bali
+        <span role="img" aria-label="Palm tree">🌴</span>
+      </p>
+      <p style="margin-top: 0.5rem; font-size: 0.85rem">
+        Questions? WhatsApp the owner directly:
+        <a href="https://wa.me/6281999376938">+62 819-9937-6938</a>
+      </p>
+    </footer>
+
+    <script>
+      // Mobile navigation toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+
+      navToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        navMenu.classList.toggle('active');
+        const isActive = navMenu.classList.contains('active');
+        navToggle.setAttribute('aria-expanded', isActive);
+        navToggle.innerHTML = isActive ? '<span>✕</span>' : '<span>☰</span>';
+      });
+
+      // Also handle touch events for better mobile support
+      navToggle.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.nav-menu a').forEach((link) => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.innerHTML = '<span>☰</span>';
+        });
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('nav') && navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.innerHTML = '<span>☰</span>';
+        }
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href && href.length > 1) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              const headerOffset = 80;
+              const elementPosition = target.offsetTop;
+              const offsetPosition = elementPosition - headerOffset;
+
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth',
+              });
+            }
+          }
+        });
+      });
+
+      // Animate elements on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Enhanced scroll effect for navigation
+      let lastScrollY = 0;
+      const nav = document.querySelector('nav');
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        // Add/remove background based on scroll position
+        if (scrollY > 100) {
+          nav.style.background = 'rgba(255, 255, 255, 0.98)';
+          nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+          nav.style.background = 'rgba(255, 255, 255, 0.95)';
+          nav.style.boxShadow = 'none';
+        }
+
+        lastScrollY = scrollY;
+      });
+
+      // Keyboard navigation support
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.innerHTML = '<span>☰</span>';
+          navToggle.focus();
+        }
+      });
+    </script>
+  </body>
+</html>
