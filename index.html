@@ -349,6 +349,11 @@
         background: rgba(45, 122, 66, 0.1);
       }
 
+      /* Hide About link on mobile */
+      .nav-menu .nav-about {
+        display: none;
+      }
+
       /* ---------- Sections (Mobile First) ---------- */
       section {
         max-width: 1200px;
@@ -657,6 +662,11 @@
           width: 80%;
         }
 
+        /* Show About link on tablet and larger */
+        .nav-menu .nav-about {
+          display: block;
+        }
+
         /* Hero section improvements */
         header.hero {
           padding: 6rem 2rem 8rem;
@@ -916,6 +926,7 @@
         </a>
         <div class="nav-menu">
           <ul>
+            <li><a href="#about" class="nav-about">About</a></li>
             <li><a href="#recipes">Recipes</a></li>
             <li><a href="#order">Order Now</a></li>
             <li><a href="#contact">Contact</a></li>
