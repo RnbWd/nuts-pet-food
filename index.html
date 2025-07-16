@@ -268,7 +268,7 @@
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
         border-bottom: 1px solid var(--border);
-        padding: 1rem;
+        padding: 0.5rem 1rem;
         z-index: 1000;
         transition: all 0.3s ease;
       }
@@ -281,57 +281,37 @@
         align-items: center;
       }
 
-      .nav-toggle {
-        display: block;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: 1rem;
-        color: var(--text);
-        min-width: 48px;
-        min-height: 48px;
-        border-radius: var(--radius-sm);
-        transition: all 0.3s ease;
-        position: relative;
-      }
-
-      .nav-toggle:hover {
-        background: rgba(45, 122, 66, 0.1);
+      .nav-logo {
+        font-size: 1.2rem;
+        font-weight: 700;
         color: var(--accent);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        min-height: 40px;
+        transition: all 0.3s ease;
       }
 
-      .nav-toggle:active {
-        transform: scale(0.95);
+      .nav-logo:hover {
+        color: var(--accent-dark);
+        transform: scale(1.05);
       }
 
       .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--white);
-        border-top: 1px solid var(--border);
-        box-shadow: var(--shadow-lg);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
       }
 
       .nav-menu ul {
         display: flex;
-        flex-direction: column;
-        gap: 0;
+        flex-direction: row;
+        gap: 0.5rem;
         list-style: none;
         margin: 0;
-        padding: 1rem 0;
+        padding: 0;
+        align-items: center;
       }
 
       .nav-menu a {
@@ -339,16 +319,18 @@
         text-decoration: none;
         color: var(--text);
         font-weight: 500;
-        padding: 1rem 1.5rem;
+        padding: 0.5rem 0.75rem;
         transition: all 0.3s ease;
-        border-left: 3px solid transparent;
-        min-height: 48px;
+        border-radius: var(--radius-sm);
+        font-size: 0.9rem;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
       }
 
       .nav-menu a:hover {
         color: var(--accent);
-        background: rgba(45, 122, 66, 0.05);
-        border-left-color: var(--accent);
+        background: rgba(45, 122, 66, 0.1);
       }
 
       /* ---------- Sections (Mobile First) ---------- */
@@ -423,9 +405,8 @@
       /* ---------- Pricing & Order (Mobile First) ---------- */
       .order-section {
         background: var(--bg-alt);
-        padding: 3rem 1rem;
+        padding: 1rem;
         border-radius: var(--radius);
-        margin: 2rem 0;
       }
 
       .order-steps {
@@ -477,7 +458,7 @@
       }
 
       .order-buttons {
-        display: none; /* Hide on mobile to avoid duplication */
+        display: flex;
         flex-direction: column;
         gap: 1rem;
         max-width: 400px;
@@ -488,7 +469,7 @@
         width: 100%;
       }
 
-      /* Mobile-only WhatsApp button */
+      /* WhatsApp button for all sizes */
       .mobile-order-button {
         display: block;
       }
@@ -614,34 +595,28 @@
          TABLET STYLES (MIN-WIDTH: 768px)
          ======================================== */
       @media (min-width: 768px) {
-        /* Navigation becomes horizontal */
-        .nav-toggle {
-          display: none;
+        /* Navigation adjustments for tablet */
+        nav {
+          padding: 1rem;
+        }
+
+        .nav-logo {
+          font-size: 1.4rem;
+          min-height: 48px;
         }
 
         .nav-menu {
-          position: static;
-          transform: none;
-          opacity: 1;
-          visibility: visible;
-          background: none;
-          border: none;
-          box-shadow: none;
-          flex: 1;
-          display: flex;
           justify-content: center;
         }
 
         .nav-menu ul {
-          flex-direction: row;
           gap: 2rem;
-          padding: 0;
         }
 
         .nav-menu a {
-          padding: 0.5rem 1rem;
-          border-left: none;
-          border-radius: var(--radius-sm);
+          padding: 0.75rem 1rem;
+          font-size: 1rem;
+          min-height: 48px;
           position: relative;
         }
 
@@ -698,7 +673,7 @@
 
         /* Buttons side by side on tablet */
         .order-buttons {
-          display: flex; /* Show on tablet and desktop */
+          display: flex;
           flex-direction: row;
           gap: 1rem;
         }
@@ -711,11 +686,6 @@
 
         .order-buttons .button {
           width: auto;
-        }
-
-        /* Hide mobile-only button on tablet and desktop */
-        .mobile-order-button {
-          display: none;
         }
 
         .button--secondary {
@@ -755,7 +725,7 @@
 
         /* Order section */
         .order-section {
-          padding: 4rem 2rem;
+          padding: 2rem;
         }
 
         .order-buttons {
@@ -838,7 +808,7 @@
 
         /* Order section */
         .order-section {
-          padding: 5rem 3rem;
+          padding: 3rem;
         }
 
         .order-buttons {
@@ -901,13 +871,12 @@
 
     <nav>
       <div class="nav-container">
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span>☰</span>
-        </button>
+        <a href="#" class="nav-logo">
+          <span role="img" aria-label="Nuts">🥜</span>
+        </a>
         <div class="nav-menu">
           <ul>
-            <li><a href="#about">Why Nuts?</a></li>
-            <li><a href="#recipes">Our Recipes</a></li>
+            <li><a href="#recipes">Recipes</a></li>
             <li><a href="#order">Order Now</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -1368,22 +1337,6 @@
             </p>
           </div>
         </div>
-
-        <div class="order-buttons">
-          <a
-            class="button button--primary"
-            href="https://wa.me/6281234567890"
-            target="_blank"
-            rel="noopener"
-          >
-            <span role="img" aria-label="Mobile phone">📱</span> Order via
-            WhatsApp
-          </a>
-          <a class="button button--secondary" href="#contact">
-            <span role="img" aria-label="Speech bubble">💬</span> Ask Questions
-            First
-          </a>
-        </div>
       </div>
     </section>
 
@@ -1437,43 +1390,6 @@
     </footer>
 
     <script>
-      // Mobile navigation toggle
-      const navToggle = document.querySelector('.nav-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-
-      navToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        navMenu.classList.toggle('active');
-        const isActive = navMenu.classList.contains('active');
-        navToggle.setAttribute('aria-expanded', isActive);
-        navToggle.innerHTML = isActive ? '<span>✕</span>' : '<span>☰</span>';
-      });
-
-      // Also handle touch events for better mobile support
-      navToggle.addEventListener('touchend', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-      });
-
-      // Close mobile menu when clicking on a link
-      document.querySelectorAll('.nav-menu a').forEach((link) => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
-          navToggle.setAttribute('aria-expanded', 'false');
-          navToggle.innerHTML = '<span>☰</span>';
-        });
-      });
-
-      // Close mobile menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest('nav') && navMenu.classList.contains('active')) {
-          navMenu.classList.remove('active');
-          navToggle.setAttribute('aria-expanded', 'false');
-          navToggle.innerHTML = '<span>☰</span>';
-        }
-      });
-
       // Smooth scrolling for navigation links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', function (e) {
@@ -1531,16 +1447,6 @@
         }
 
         lastScrollY = scrollY;
-      });
-
-      // Keyboard navigation support
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-          navMenu.classList.remove('active');
-          navToggle.setAttribute('aria-expanded', 'false');
-          navToggle.innerHTML = '<span>☰</span>';
-          navToggle.focus();
-        }
       });
     </script>
   </body>
