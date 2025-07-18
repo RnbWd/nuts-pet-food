@@ -45,7 +45,7 @@
     <nav>
       <div class="nav-container">
         <a href="#hero" class="nav-logo">
-          <img src="images/nuts-logo.png" alt="Nuts" class="nav-logo-img" />
+          <span class="nav-logo-text">NUTS</span>
         </a>
         <div class="nav-menu">
           <ul>
@@ -61,16 +61,23 @@
     <!-- Hero section with full background -->
     <header id="hero" class="hero">
       <div class="hero-content">
-        <h1 class="hero-title">NUTS<br />PET FOOD</h1>
+        <div class="hero-left">
+          <h1 class="hero-title">NUTS<br />PET FOOD</h1>
+          <div class="hero-cta">
+            <a href="#order" class="button button--primary"> SHOP NOW </a>
+            <a href="#recipes" class="button button--secondary">
+              SEE INGREDIENTS
+            </a>
+          </div>
+        </div>
         <div class="hero-image">
           <img
-            src="images/chicken-with-tuna-dog.png"
-            alt="Happy dog on scooter with Nuts Pet Food"
+            src="images/dog-bike.png"
+            alt="Happy dog on bike with Nuts Pet Food"
             class="hero-dog-img"
           />
         </div>
-        <p class="hero-subtitle">Delicious meals for dogs</p>
-        <div class="hero-cta">
+        <div class="hero-cta-mobile">
           <a href="#order" class="button button--primary"> SHOP NOW </a>
           <a href="#recipes" class="button button--secondary">
             SEE INGREDIENTS
@@ -628,21 +635,6 @@
       // Enhanced scroll effect for navigation
       let lastScrollY = 0;
       const nav = document.querySelector('nav');
-
-      window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-
-        // Add/remove background based on scroll position
-        if (scrollY > 100) {
-          nav.style.background = 'rgba(255, 255, 255, 0.98)';
-          nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-          nav.style.background = 'rgba(255, 255, 255, 0.95)';
-          nav.style.boxShadow = 'none';
-        }
-
-        lastScrollY = scrollY;
-      });
     </script>
   </body>
 </html>

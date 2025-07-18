@@ -1,6 +1,170 @@
+/* ========================================
+         CUSTOM FONTS
+         ======================================== */
+
+/* Komika Title Font Family */
+/* @font-face {
+  font-family: 'Komika Title';
+  src: url('fonts/komika_title/KOMTIT__.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Komika Title';
+  src: url('fonts/komika_title/KOMTITA_.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Komika Title';
+  src: url('fonts/komika_title/KOMTITBR.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Komika Title Wide';
+  src: url('fonts/komika_title/KOMTITWR.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Komika Title Extended';
+  src: url('fonts/komika_title/KOMTITE_.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Komika Title Gradient';
+  src: url('fonts/komika_title/KOMTITG_.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Komika Title Kaps';
+  src: url('fonts/komika_title/KOMTITK_.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Komika Title Paint';
+  src: url('fonts/komika_title/KOMTITP_.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Komika Title Solid';
+  src: url('fonts/komika_title/KOMTITS_.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Komika Title Tilt';
+  src: url('fonts/komika_title/KOMTITT_.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Komika Title Tall';
+  src: url('fonts/komika_title/KOMTITTL.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Komika Title Wacky';
+  src: url('fonts/komika_title/KOMTITW_.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+/* Komika Axis Font */
+/* @font-face {
+  font-family: 'Komika Axis';
+  src: url('fonts/komika_axis/KOMIKAX_.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+/* Mabook Font */
+@font-face {
+  font-family: 'Mabook';
+  src: url('fonts/mabook/Mabook.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mabook';
+  src: url('fonts/mabook/Mabook.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* KG Happy Font Family */
+/* @font-face {
+  font-family: 'KG Happy';
+  src: url('fonts/kg_happy/KGHAPPY.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KG Happy Shadows';
+  src: url('fonts/kg_happy/KGHAPPYShadows.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KG Happy Solid';
+  src: url('fonts/kg_happy/KGHAPPYSolid.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+/* Indiana Jonas Font */
+/* @font-face {
+  font-family: 'Indiana Jonas';
+  src: url('fonts/indiana_jonas/Indiana-Jonas-48p.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Indiana Jonas Italic';
+  src: url('fonts/indiana_jonas/Indiana-Jonas-48ip.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+} */
+
+/* Cakecafe Font */
+/* @font-face {
+  font-family: 'Cakecafe';
+  src: url('fonts/cakecafe/Cakecafe.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cakecafe';
+  src: url('fonts/cakecafe/Cakecafe.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
 :root {
-  --bg: #fff8e1;
-  --bg-alt: #f5e6a8;
+  --bg: #fff3d5;
+  --bg-alt: #ffe4a2;
   --text: #333333;
   --accent: #d2691e;
   --accent-light: #e6945a;
@@ -24,6 +188,12 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background: var(--bg);
+  background-image: url('images/paw.svg'), url('images/paw.svg'),
+    url('images/paw.svg'), url('images/paw.svg'), url('images/paw.svg');
+  background-size: 70px 70px, 50px 50px, 60px 60px, 56px 56px, 64px 64px;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 6% 18%, 92% 55%, 11% 78%, 85% 12%, 95% 90%;
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
@@ -192,9 +362,9 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  /* background: rgba(255, 243, 213, 0.85); */
+  backdrop-filter: blur(15px);
+  border-bottom: 1.5px solid rgba(230, 212, 168, 0.3);
   padding: 0.5rem 1rem;
   z-index: 1000;
   transition: all 0.3s ease;
@@ -209,31 +379,30 @@ nav {
 }
 
 .nav-logo {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--accent);
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   min-height: 40px;
   transition: all 0.3s ease;
 }
 
-.nav-logo-img {
-  height: 32px;
-  width: auto;
-  object-fit: contain;
-  border-radius: 50%;
+.nav-logo-text {
+  font-family: 'Mabook', sans-serif;
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: var(--bg);
+  background: linear-gradient(135deg, #ff6b35, #d2691e);
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(210, 105, 30, 0.3);
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
 }
 
-.nav-logo:hover {
-  color: var(--accent-dark);
+.nav-logo:hover .nav-logo-text {
   transform: scale(1.05);
-}
-
-.nav-logo:hover .nav-logo-img {
-  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(210, 105, 30, 0.4);
+  background: linear-gradient(135deg, #ff7a47, #e6945a);
 }
 
 .nav-menu {
@@ -278,7 +447,7 @@ nav {
 
 /* ---------- Hero Section (Mobile First) ---------- */
 header.hero {
-  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 100%);
+  /* tweak density */
   position: relative;
   overflow: hidden;
   min-height: 100vh;
@@ -303,14 +472,12 @@ header.hero::before {
   margin: 0 auto;
 }
 
-header.hero h1 {
+.hero-title {
+  font-family: 'Mabook', sans-serif;
   font-size: 3rem;
-  margin: 0 0 2rem 0;
-  font-weight: 800;
+  margin: 0;
   color: var(--accent);
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   animation: fadeInUp 0.8s ease-out;
 }
 
@@ -321,7 +488,7 @@ header.hero h1 {
 
 .hero-dog-img {
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
@@ -337,6 +504,16 @@ header.hero p {
 }
 
 .hero-cta {
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+  display: none; /* Hide desktop buttons on mobile */
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-cta-mobile {
   animation: fadeInUp 0.8s ease-out 0.6s both;
   display: flex;
   flex-direction: column;
@@ -672,13 +849,12 @@ footer a:hover {
   }
 
   .nav-logo {
-    font-size: 1.4rem;
     min-height: 48px;
   }
 
-  .nav-logo-img {
-    height: 40px;
-    border-radius: 50%;
+  .nav-logo-text {
+    font-size: 1.6rem;
+    padding: 0.6rem 1.4rem;
   }
 
   .nav-menu {
@@ -726,12 +902,12 @@ footer a:hover {
     max-width: 600px;
   }
 
-  header.hero h1 {
+  .hero-title {
     font-size: 4rem;
   }
 
   .hero-dog-img {
-    max-width: 400px;
+    max-width: 500px;
   }
 
   header.hero p {
@@ -861,23 +1037,50 @@ footer a:hover {
   }
 
   .hero-content {
-    max-width: 800px;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    text-align: left;
   }
 
-  header.hero h1 {
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-image {
+    order: 2;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-title {
     font-size: 5rem;
+    margin: 0 0 2rem 0;
   }
 
   .hero-dog-img {
-    max-width: 500px;
+    max-width: 600px;
   }
 
   header.hero p {
     font-size: 1.4rem;
+    margin: 0 0 2rem 0;
   }
 
   .hero-cta {
+    display: flex; /* Show desktop buttons */
     gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .hero-cta-mobile {
+    display: none; /* Hide mobile buttons on desktop */
   }
 
   .button {
@@ -944,12 +1147,12 @@ footer a:hover {
          LARGE DESKTOP STYLES (MIN-WIDTH: 1200px)
          ======================================== */
 @media (min-width: 1200px) {
-  header.hero h1 {
+  .hero-title {
     font-size: 6rem;
   }
 
   .hero-dog-img {
-    max-width: 600px;
+    max-width: 700px;
   }
 
   header.hero p {
