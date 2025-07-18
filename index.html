@@ -41,30 +41,10 @@
   <body>
     <a href="#about" class="skip-to-content">Skip to content</a>
 
-    <header class="hero">
-      <h1>Nuts Pet Food</h1>
-      <div class="hero-logo">
-        <img
-          src="images/logo-one.png"
-          alt="Nuts Pet Food Logo"
-          class="hero-logo-img"
-        />
-      </div>
-      <p>
-        Premium organic meals crafted with love in Bali.<br />Because your pets
-        deserve restaurant-quality nutrition.
-      </p>
-      <div class="hero-cta">
-        <a href="#order" class="button button--primary">
-          <span role="img" aria-label="Dog">🐕</span
-          ><span role="img" aria-label="Cat">🐱</span> Order Fresh Meals Today
-        </a>
-      </div>
-    </header>
-
+    <!-- Navigation moved to top -->
     <nav>
       <div class="nav-container">
-        <a href="#about" class="nav-logo">
+        <a href="#hero" class="nav-logo">
           <img src="images/nuts-logo.png" alt="Nuts" class="nav-logo-img" />
         </a>
         <div class="nav-menu">
@@ -77,6 +57,27 @@
         </div>
       </div>
     </nav>
+
+    <!-- Hero section with full background -->
+    <header id="hero" class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">NUTS<br />PET FOOD</h1>
+        <div class="hero-image">
+          <img
+            src="images/chicken-with-tuna-dog.png"
+            alt="Happy dog on scooter with Nuts Pet Food"
+            class="hero-dog-img"
+          />
+        </div>
+        <p class="hero-subtitle">Delicious meals for dogs</p>
+        <div class="hero-cta">
+          <a href="#order" class="button button--primary"> SHOP NOW </a>
+          <a href="#recipes" class="button button--secondary">
+            SEE INGREDIENTS
+          </a>
+        </div>
+      </div>
+    </header>
 
     <!-- ================= ABOUT ================= -->
     <section id="about" class="animate-on-scroll">
@@ -592,7 +593,7 @@
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
-              const headerOffset = 60;
+              const headerOffset = 80;
               const elementPosition = target.offsetTop;
               const offsetPosition = elementPosition - headerOffset;
 
