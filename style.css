@@ -275,6 +275,12 @@ nav {
   box-shadow: 0 4px 15px rgba(210, 105, 30, 0.3);
   letter-spacing: 0.05em;
   transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .nav-logo:hover .nav-logo-text {
