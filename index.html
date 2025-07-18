@@ -65,7 +65,7 @@
           <h1 class="hero-title">NUTS<br />PET FOOD</h1>
           <div class="hero-cta">
             <a href="#order" class="button button--primary"> SHOP NOW </a>
-            <a href="#recipes" class="button button--secondary">
+            <a href="#about" class="button button--secondary button--animated">
               SEE INGREDIENTS
             </a>
           </div>
@@ -115,7 +115,7 @@
         </div>
         <div class="hero-cta-mobile">
           <a href="#order" class="button button--primary"> SHOP NOW </a>
-          <a href="#recipes" class="button button--secondary">
+          <a href="#about" class="button button--secondary button--animated">
             SEE INGREDIENTS
           </a>
         </div>
@@ -124,47 +124,100 @@
 
     <!-- ================= ABOUT ================= -->
     <section id="about" class="animate-on-scroll">
-      <h2>Why Choose Nuts Pet Food?</h2>
-      <div class="features">
-        <div class="card">
-          <h3>
-            <span role="img" aria-label="Meat">🥩</span> Human‑Grade Ingredients
-          </h3>
-          <p>
-            We source only the finest Bali-grown organic vegetables, free-range
-            meats, and premium proteins. Every ingredient is fresh enough for
-            your family table.
-          </p>
+      <h2>Why Dogs Go Nuts for Us!</h2>
+      <div class="features-slideshow">
+        <div class="slideshow-container">
+          <div class="slide active">
+            <div class="card">
+              <h3><span role="img" aria-label="Can">🥫</span> 500g Per Can!</h3>
+              <p>
+                We're the ONLY company that fits 500g of real food into one can.
+                More food, more love!
+              </p>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="card">
+              <h3>
+                <span role="img" aria-label="Meat">🥩</span> Real Food Only
+              </h3>
+              <p>
+                Fresh chicken, tuna, and veggies. So real, you could eat it too!
+              </p>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="card">
+              <h3>
+                <span role="img" aria-label="No entry">🚫</span> No Nasties
+              </h3>
+              <p>
+                No preservatives, no chemicals, no fake stuff. Just pure
+                goodness.
+              </p>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="card">
+              <h3>
+                <span role="img" aria-label="Palm tree">🌴</span> Bali Fresh
+              </h3>
+              <p>
+                Local & organic ingredients from beautiful Bali. Made with
+                island love!
+              </p>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="card">
+              <h3>
+                <span role="img" aria-label="Heart eyes">😍</span> Dogs Love It
+              </h3>
+              <p>
+                Tail wags guaranteed! Watch your pup's excitement at meal time.
+              </p>
+            </div>
+          </div>
+
+          <!-- Navigation arrows -->
+          <button
+            class="slide-arrow slide-arrow--prev"
+            aria-label="Previous slide"
+          >
+            &lt;
+          </button>
+          <button class="slide-arrow slide-arrow--next" aria-label="Next slide">
+            &gt;
+          </button>
         </div>
-        <div class="card">
-          <h3>
-            <span role="img" aria-label="No entry">🚫</span> Zero Preservatives
-          </h3>
-          <p>
-            Our traditional slow-cooking and craft-canning process preserves
-            nutrients naturally—no artificial additives, colors, or chemicals
-            ever touch your dog's meal.
-          </p>
-        </div>
-        <div class="card">
-          <h3>
-            <span role="img" aria-label="Sparkles">✨</span> Radiant Health
-          </h3>
-          <p>
-            Perfectly balanced omega fatty acids, antioxidants, and
-            phytonutrients promote glossy coats, healthy skin, and boundless
-            energy in every bite.
-          </p>
-        </div>
-        <div class="card">
-          <h3>
-            <span role="img" aria-label="Chef">👨‍🍳</span> Hand‑Crafted Excellence
-          </h3>
-          <p>
-            Every batch is lovingly prepared by hand in small quantities,
-            ensuring consistent quality and freshness that mass-produced food
-            simply can't match.
-          </p>
+
+        <!-- Dots indicator -->
+        <div class="slide-dots">
+          <button
+            class="dot active"
+            data-slide="0"
+            aria-label="Go to slide 1"
+          ></button>
+          <button
+            class="dot"
+            data-slide="1"
+            aria-label="Go to slide 2"
+          ></button>
+          <button
+            class="dot"
+            data-slide="2"
+            aria-label="Go to slide 3"
+          ></button>
+          <button
+            class="dot"
+            data-slide="3"
+            aria-label="Go to slide 4"
+          ></button>
+          <button
+            class="dot"
+            data-slide="4"
+            aria-label="Go to slide 5"
+          ></button>
         </div>
       </div>
     </section>
@@ -178,7 +231,7 @@
       </div>
       <div class="testimonial-author">— Sarah K., Ubud Dog Mom</div> -->
 
-      <div class="testimonial" style="margin-top: 2rem">
+      <div class="testimonial testimonial--spaced">
         "I'm not good at talking, but I'm good at doing. Every batch is made
         with love, and the food is so natural that I can eat it myself. My dogs
         tell me it's good by how excited they get at meal time!"
@@ -189,17 +242,7 @@
     <!-- ================= RECIPES ================= -->
     <section id="recipes" class="animate-on-scroll">
       <h2>Our Artisan Pet Food Menu</h2>
-      <p
-        style="
-          text-align: center;
-          font-size: 1.1rem;
-          color: var(--muted);
-          margin-bottom: 3rem;
-          max-width: 600px;
-          margin-left: auto;
-          margin-right: auto;
-        "
-      >
+      <p class="recipe-intro">
         Every meal is hand-crafted with love, using only the finest ingredients
         sourced locally in Bali. From playful puppies to wise old cats, we have
         something special for every furry family member.
@@ -503,26 +546,11 @@
         </div>
       </div>
 
-      <div
-        style="
-          text-align: center;
-          margin-top: 3rem;
-          padding: 2rem;
-          background: var(--bg-alt);
-          border-radius: var(--radius);
-        "
-      >
-        <h3 style="color: var(--accent); margin-bottom: 1rem">
+      <div class="recipe-footer">
+        <h3>
           <span role="img" aria-label="Heart">💝</span> Made with Love in Bali
         </h3>
-        <p
-          style="
-            color: var(--muted);
-            max-width: 500px;
-            margin: 0 auto;
-            line-height: 1.6;
-          "
-        >
+        <p>
           Every recipe is carefully crafted by our head chef Avi, using
           traditional cooking methods and the freshest local ingredients. We
           believe your pets deserve nothing but the best.
@@ -534,24 +562,13 @@
     <section id="order" class="animate-on-scroll">
       <div class="order-section">
         <h2>Fresh Delivery Across Bali</h2>
-        <p
-          style="
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--muted);
-            margin-bottom: 2rem;
-            line-height: 1.6;
-          "
-        >
+        <p class="order-intro">
           We deliver fresh meals across
           <strong>South & Central Bali</strong> Monday through Friday.
         </p>
 
         <!-- Mobile-only WhatsApp button -->
-        <div
-          class="mobile-order-button"
-          style="text-align: center; margin-bottom: 2rem"
-        >
+        <div class="mobile-order-button">
           <a
             class="button button--primary"
             href="https://wa.me/6287861808065"
@@ -635,7 +652,7 @@
         &copy; 2025 Nuts Pet Food – Crafted with love & sea breeze in Bali
         <span role="img" aria-label="Palm tree">🌴</span>
       </p>
-      <p style="margin-top: 0.5rem; font-size: 0.85rem">
+      <p class="footer-contact">
         Questions? WhatsApp the owner directly:
         <a href="https://wa.me/6281999376938">+62 819-9937-6938</a>
       </p>
@@ -972,6 +989,101 @@
           modal.classList.remove('show');
         }
       });
+
+      // Features slideshow functionality
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.dot');
+      const totalSlides = slides.length;
+      let slideInterval;
+
+      function showSlide(index) {
+        // Remove all classes from all slides and dots
+        slides.forEach((slide) =>
+          slide.classList.remove('active', 'prev', 'next')
+        );
+        dots.forEach((dot) => dot.classList.remove('active'));
+
+        // Add active class to current slide and dot
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+
+        // Add prev and next classes for smoother animation
+        const prevIndex = (index - 1 + totalSlides) % totalSlides;
+        const nextIndex = (index + 1) % totalSlides;
+        slides[prevIndex].classList.add('prev');
+        slides[nextIndex].classList.add('next');
+
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        const next = (currentSlide + 1) % totalSlides;
+        showSlide(next);
+      }
+
+      function prevSlide() {
+        const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(prev);
+      }
+
+      function startAutoSlide() {
+        clearInterval(slideInterval); // Clear any existing interval
+        slideInterval = setInterval(nextSlide, 8000); // Change slide every 8 seconds
+      }
+
+      function stopAutoSlide() {
+        clearInterval(slideInterval);
+      }
+
+      function resetAutoSlide() {
+        stopAutoSlide();
+        startAutoSlide();
+      }
+
+      // Arrow navigation
+      document
+        .querySelector('.slide-arrow--next')
+        .addEventListener('click', () => {
+          nextSlide();
+          resetAutoSlide();
+        });
+
+      document
+        .querySelector('.slide-arrow--prev')
+        .addEventListener('click', () => {
+          prevSlide();
+          resetAutoSlide();
+        });
+
+      // Dot navigation
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          showSlide(index);
+          resetAutoSlide();
+        });
+      });
+
+      // Pause auto-slide on hover
+      const slideshowContainer = document.querySelector('.slideshow-container');
+      slideshowContainer.addEventListener('mouseenter', stopAutoSlide);
+      slideshowContainer.addEventListener('mouseleave', startAutoSlide);
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          prevSlide();
+          resetAutoSlide();
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          nextSlide();
+          resetAutoSlide();
+        }
+      });
+
+      // Start the slideshow
+      startAutoSlide();
     </script>
   </body>
 </html>
