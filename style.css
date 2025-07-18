@@ -2,98 +2,13 @@
          CUSTOM FONTS
          ======================================== */
 
-/* Komika Title Font Family */
-/* @font-face {
-  font-family: 'Komika Title';
-  src: url('fonts/komika_title/KOMTIT__.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Komika Title';
-  src: url('fonts/komika_title/KOMTITA_.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Komika Title';
-  src: url('fonts/komika_title/KOMTITBR.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Komika Title Wide';
-  src: url('fonts/komika_title/KOMTITWR.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Komika Title Extended';
-  src: url('fonts/komika_title/KOMTITE_.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Komika Title Gradient';
-  src: url('fonts/komika_title/KOMTITG_.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Komika Title Kaps';
-  src: url('fonts/komika_title/KOMTITK_.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Komika Title Paint';
-  src: url('fonts/komika_title/KOMTITP_.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Komika Title Solid';
-  src: url('fonts/komika_title/KOMTITS_.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Komika Title Tilt';
-  src: url('fonts/komika_title/KOMTITT_.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Komika Title Tall';
-  src: url('fonts/komika_title/KOMTITTL.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Komika Title Wacky';
-  src: url('fonts/komika_title/KOMTITW_.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-} */
-
 /* Komika Axis Font */
-/* @font-face {
+@font-face {
   font-family: 'Komika Axis';
   src: url('fonts/komika_axis/KOMIKAX_.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-} */
+}
 
 /* Mabook Font */
 @font-face {
@@ -110,45 +25,8 @@
   font-style: normal;
 }
 
-/* KG Happy Font Family */
-/* @font-face {
-  font-family: 'KG Happy';
-  src: url('fonts/kg_happy/KGHAPPY.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'KG Happy Shadows';
-  src: url('fonts/kg_happy/KGHAPPYShadows.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'KG Happy Solid';
-  src: url('fonts/kg_happy/KGHAPPYSolid.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-} */
-
-/* Indiana Jonas Font */
-/* @font-face {
-  font-family: 'Indiana Jonas';
-  src: url('fonts/indiana_jonas/Indiana-Jonas-48p.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Indiana Jonas Italic';
-  src: url('fonts/indiana_jonas/Indiana-Jonas-48ip.otf') format('opentype');
-  font-weight: normal;
-  font-style: italic;
-} */
-
 /* Cakecafe Font */
-/* @font-face {
+@font-face {
   font-family: 'Cakecafe';
   src: url('fonts/cakecafe/Cakecafe.ttf') format('truetype');
   font-weight: normal;
@@ -160,7 +38,7 @@
   src: url('fonts/cakecafe/Cakecafe.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-} */
+}
 
 :root {
   --bg: #fff3d5;
