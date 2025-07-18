@@ -71,11 +71,47 @@
           </div>
         </div>
         <div class="hero-image">
-          <img
-            src="images/dog-bike.png"
-            alt="Happy dog on bike with Nuts Pet Food"
-            class="hero-dog-img"
-          />
+          <picture>
+            <source
+              media="(min-width: 1200px)"
+              srcset="images/dog-bike/dog-bike700w.webp"
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 1200px)"
+              srcset="images/dog-bike/dog-bike700w.png"
+              type="image/png"
+            />
+            <source
+              media="(min-width: 1024px)"
+              srcset="images/dog-bike/dog-bike600w.webp"
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 1024px)"
+              srcset="images/dog-bike/dog-bike600w.png"
+              type="image/png"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="images/dog-bike/dog-bike500w.webp"
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="images/dog-bike/dog-bike500w.png"
+              type="image/png"
+            />
+            <source
+              srcset="images/dog-bike/dog-bike300w.webp"
+              type="image/webp"
+            />
+            <img
+              src="images/dog-bike/dog-bike300w.png"
+              alt="Happy dog on bike with Nuts Pet Food"
+              class="hero-dog-img"
+            />
+          </picture>
         </div>
         <div class="hero-cta-mobile">
           <a href="#order" class="button button--primary"> SHOP NOW </a>
