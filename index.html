@@ -11,7 +11,8 @@
     <meta name="robots" content="index, follow" />
     <meta
       name="keywords"
-      content="dog food Bali, cat food Bali, pet food Bali, natural dog food Bali, healthy dog food Bali, canned dog food Bali, organic dog food Bali, dog food delivery Bali, nuts pet food"
+      content="dog food Bali, cat food Bali, pet food Bali, natural dog food, healthy pet food, healthy cat food, healthy dog food, canned food 
+      Bali, organic dog food, organic cat food, pet food delivery, nuts pet food"
     />
     <meta
       property="og:title"
@@ -126,59 +127,7 @@
     <section id="about" class="animate-on-scroll">
       <h2>Why Dogs Go Nuts for Us!</h2>
       <div class="features-slideshow">
-        <div class="slideshow-container">
-          <div class="slide active">
-            <div class="card">
-              <h3><span role="img" aria-label="Can">🥫</span> 500g Per Can!</h3>
-              <p>
-                We're the ONLY company that fits 500g of real food into one can.
-                More food, more love!
-              </p>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="card">
-              <h3>
-                <span role="img" aria-label="Meat">🥩</span> Real Food Only
-              </h3>
-              <p>
-                Fresh chicken, tuna, and veggies. So real, you could eat it too!
-              </p>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="card">
-              <h3>
-                <span role="img" aria-label="No entry">🚫</span> No Nasties
-              </h3>
-              <p>
-                No preservatives, no chemicals, no fake stuff. Just pure
-                goodness.
-              </p>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="card">
-              <h3>
-                <span role="img" aria-label="Palm tree">🌴</span> Bali Fresh
-              </h3>
-              <p>
-                Local & organic ingredients from beautiful Bali. Made with
-                island love!
-              </p>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="card">
-              <h3>
-                <span role="img" aria-label="Heart eyes">😍</span> Dogs Love It
-              </h3>
-              <p>
-                Tail wags guaranteed! Watch your pup's excitement at meal time.
-              </p>
-            </div>
-          </div>
-
+        <div class="slideshow-with-arrows">
           <!-- Navigation arrows -->
           <button
             class="slide-arrow slide-arrow--prev"
@@ -186,6 +135,66 @@
           >
             &lt;
           </button>
+
+          <div class="slideshow-container">
+            <div class="slide active">
+              <div class="card">
+                <h3>
+                  <span role="img" aria-label="Can">🥫</span> 500g Per Can!
+                </h3>
+                <p>
+                  We're the ONLY company that fits 500g of real food into one
+                  can. More food, more love!
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="card">
+                <h3>
+                  <span role="img" aria-label="Meat">🥩</span> Real Food Only
+                </h3>
+                <p>
+                  Fresh chicken, tuna, and veggies. So real, you could eat it
+                  too!
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="card">
+                <h3>
+                  <span role="img" aria-label="No entry">🚫</span> No Nasties
+                </h3>
+                <p>
+                  No preservatives, no chemicals, no fake stuff. Just pure
+                  goodness.
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="card">
+                <h3>
+                  <span role="img" aria-label="Palm tree">🌴</span> Bali Fresh
+                </h3>
+                <p>
+                  Local & organic ingredients from beautiful Bali. Made with
+                  island love!
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="card">
+                <h3>
+                  <span role="img" aria-label="Heart eyes">😍</span> Dogs Love
+                  It
+                </h3>
+                <p>
+                  Tail wags guaranteed! Watch your pup's excitement at meal
+                  time.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <button class="slide-arrow slide-arrow--next" aria-label="Next slide">
             &gt;
           </button>
@@ -1080,6 +1089,87 @@
           nextSlide();
           resetAutoSlide();
         }
+      });
+
+      // Touch/Swipe functionality for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+      let touchStartY = 0;
+      let touchEndY = 0;
+      let isSwiping = false;
+
+      function handleSwipe() {
+        const swipeThreshold = 50; // Minimum distance for a swipe
+        const verticalThreshold = 100; // Maximum vertical movement to still count as horizontal swipe
+
+        const horizontalDistance = Math.abs(touchEndX - touchStartX);
+        const verticalDistance = Math.abs(touchEndY - touchStartY);
+
+        // Only process horizontal swipes
+        if (
+          horizontalDistance > swipeThreshold &&
+          verticalDistance < verticalThreshold
+        ) {
+          if (touchEndX < touchStartX) {
+            // Swipe left - next slide
+            nextSlide();
+            resetAutoSlide();
+          } else if (touchEndX > touchStartX) {
+            // Swipe right - previous slide
+            prevSlide();
+            resetAutoSlide();
+          }
+        }
+      }
+
+      // Add touch event listeners to slideshow container
+      slideshowContainer.addEventListener(
+        'touchstart',
+        (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+          touchStartY = e.changedTouches[0].screenY;
+          isSwiping = true;
+          stopAutoSlide(); // Stop auto-slide when user starts touching
+        },
+        { passive: true }
+      );
+
+      slideshowContainer.addEventListener(
+        'touchmove',
+        (e) => {
+          if (!isSwiping) return;
+          // Prevent default scroll behavior during horizontal swipes
+          const currentX = e.changedTouches[0].screenX;
+          const currentY = e.changedTouches[0].screenY;
+          const horizontalDistance = Math.abs(currentX - touchStartX);
+          const verticalDistance = Math.abs(currentY - touchStartY);
+
+          if (
+            horizontalDistance > verticalDistance &&
+            horizontalDistance > 10
+          ) {
+            e.preventDefault();
+          }
+        },
+        { passive: false }
+      );
+
+      slideshowContainer.addEventListener(
+        'touchend',
+        (e) => {
+          if (!isSwiping) return;
+          touchEndX = e.changedTouches[0].screenX;
+          touchEndY = e.changedTouches[0].screenY;
+          handleSwipe();
+          isSwiping = false;
+          startAutoSlide(); // Resume auto-slide after touch ends
+        },
+        { passive: true }
+      );
+
+      // Prevent context menu on long press for better mobile experience
+      slideshowContainer.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
       });
 
       // Start the slideshow
