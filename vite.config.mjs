@@ -1,12 +1,18 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  server: {
-    open: '/index.html',
-  },
   build: {
-    outDir: '../dist',
+    cssMinify: "lightningcss",
+    outDir: "../dist",
     emptyOutDir: true,
   },
-  root: 'src',
+  css: {
+    transformer: "lightningcss",
+  },
+  plugins: [tailwindcss()],
+  root: "src",
+  server: {
+    open: "/index.html",
+  },
 });
