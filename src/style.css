@@ -50,9 +50,11 @@
   --muted: #666666;
   --border: #e6d4a8;
   --white: #ffffff;
-  --shadow: 0 4px 6px -1px rgba(210, 105, 30, 0.1),
+  --shadow:
+    0 4px 6px -1px rgba(210, 105, 30, 0.1),
     0 2px 4px -1px rgba(210, 105, 30, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(210, 105, 30, 0.1),
+  --shadow-lg:
+    0 10px 15px -3px rgba(210, 105, 30, 0.1),
     0 4px 6px -2px rgba(210, 105, 30, 0.05);
   --radius: 12px;
   --radius-sm: 6px;
@@ -66,11 +68,22 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background: var(--bg);
-  background-image: url('images/paw.svg'), url('images/paw.svg'),
-    url('images/paw.svg'), url('images/paw.svg'), url('images/paw.svg');
-  background-size: 70px 70px, 50px 50px, 60px 60px, 56px 56px, 64px 64px;
+  background-image:
+    url('images/paw.svg'), url('images/paw.svg'), url('images/paw.svg'),
+    url('images/paw.svg'), url('images/paw.svg');
+  background-size:
+    70px 70px,
+    50px 50px,
+    60px 60px,
+    56px 56px,
+    64px 64px;
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-position: 6% 18%, 92% 55%, 11% 78%, 85% 12%, 95% 90%;
+  background-position:
+    6% 18%,
+    92% 55%,
+    11% 78%,
+    85% 12%,
+    95% 90%;
   background-attachment: fixed;
   color: var(--text);
   line-height: 1.6;
@@ -796,13 +809,18 @@ section h2::after {
     /* Lighter yellow/orange for the center */ #f0b04a,
     /* Medium orange */ #e6a040 /* Darker orange/brown for the outer edge */
   );
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
   transition: transform 0.3s ease;
+  margin: 0 auto;
+  display: block;
 }
 
 .product-card:hover .product-image img {
@@ -918,12 +936,21 @@ section h2::after {
   height: 200px;
   overflow: hidden;
   border-radius: var(--radius) var(--radius) 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at center,
+    /* Shape is a circle, origin is the center */ #ffe082,
+    /* Lighter yellow/orange for the center */ #f0b04a,
+    /* Medium orange */ #e6a040 /* Darker orange/brown for the outer edge */
+  );
 }
 
 .modal-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
 }
 
 .modal-details {
@@ -1362,6 +1389,11 @@ footer a:hover {
     height: 220px;
   }
 
+  .product-image img {
+    width: 150px;
+    height: 150px;
+  }
+
   /* Category navigation for tablet */
   .category-nav {
     gap: 1rem;
@@ -1387,6 +1419,11 @@ footer a:hover {
     flex: 0 0 280px;
     height: 280px;
     border-radius: var(--radius) 0 0 var(--radius);
+  }
+
+  .modal-image img {
+    width: 150px;
+    height: 150px;
   }
 
   .modal-details {
@@ -1604,6 +1641,11 @@ footer a:hover {
     height: 240px;
   }
 
+  .product-image img {
+    width: 150px;
+    height: 150px;
+  }
+
   /* Category navigation for desktop */
   .category-nav {
     gap: 1.5rem;
@@ -1625,6 +1667,11 @@ footer a:hover {
   .modal-image {
     flex: 0 0 320px;
     height: 320px;
+  }
+
+  .modal-image img {
+    width: 150px;
+    height: 150px;
   }
 
   .modal-details {
