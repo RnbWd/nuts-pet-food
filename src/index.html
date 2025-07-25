@@ -1233,13 +1233,19 @@
 
       // Function to get the appropriate image based on product category
       function getProductImage(productId) {
-        if (productId.startsWith('cat-')) {
-          return 'images/cat-transparent/cat-transparent150w.png';
-        } else if (productId.startsWith('puppy-')) {
-          return 'images/puppy-transparent/puppy-transparent150w.png';
-        } else {
-          return 'images/dog-transparent/dog-transparent150w.png';
+        // Find the product card with this productId
+        const productCard = document.querySelector(
+          `[data-product="${productId}"]`
+        );
+        if (productCard) {
+          const productImage = productCard.querySelector('.product-image img');
+          if (productImage) {
+            return productImage.src;
+          }
         }
+
+        // Fallback to default dog image if not found
+        return './images/dog-transparent/dog-transparent150w.png';
       }
 
       // Open modal when product card is clicked
