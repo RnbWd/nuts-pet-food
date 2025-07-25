@@ -790,6 +790,12 @@ section h2::after {
   height: 200px;
   overflow: hidden;
   position: relative;
+  background: radial-gradient(
+    circle at center,
+    /* Shape is a circle, origin is the center */ #ffe082,
+    /* Lighter yellow/orange for the center */ #f0b04a,
+    /* Medium orange */ #e6a040 /* Darker orange/brown for the outer edge */
+  );
 }
 
 .product-image img {
