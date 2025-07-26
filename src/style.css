@@ -424,8 +424,6 @@ header.hero::before {
 
 .hero-dog-img {
   width: 100%;
-  max-width: 300px;
-  height: auto;
   object-fit: contain;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
 }
@@ -1323,10 +1321,6 @@ footer a:hover {
     font-size: 4rem;
   }
 
-  .hero-dog-img {
-    max-width: 500px;
-  }
-
   header.hero p {
     font-size: 1.3rem;
   }
@@ -1574,10 +1568,6 @@ footer a:hover {
     margin: 0 0 2rem 0;
   }
 
-  .hero-dog-img {
-    max-width: 600px;
-  }
-
   header.hero p {
     font-size: 1.4rem;
     margin: 0 0 2rem 0;
@@ -1745,10 +1735,6 @@ footer a:hover {
 @media (min-width: 1200px) {
   .hero-title {
     font-size: 6rem;
-  }
-
-  .hero-dog-img {
-    max-width: 700px;
   }
 
   header.hero p {

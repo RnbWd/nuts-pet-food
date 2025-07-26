@@ -52,7 +52,7 @@ async function processImage(inputImagePath, outputDirectory, baseName, widths) {
 
 // --- Configuration ---
 // The image you want to process
-const inputFile = 'puppy-transparent.png';
+const inputFile = 'dog-bike.png';
 
 // The base name for your output files
 const outputBaseName = inputFile.split('.')[0];
@@ -63,7 +63,7 @@ const inputDir = path.join('src/images', inputFile);
 // This will create a subdirectory based on the outputBaseName
 const outputDir = path.join('src/images', outputBaseName);
 // The different widths you want to generate
-const targetWidths = [200, 150, 100, 50];
+const targetWidths = [300, 600, 900];
 
 // --- How to Run This Script ---
 // 1. Make sure you have Node.js installed.
