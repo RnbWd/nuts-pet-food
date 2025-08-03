@@ -41,21 +41,22 @@
 }
 
 :root {
-  --bg: #fff3d5;
-  --bg-alt: #ffe4a2;
-  --text: #333333;
-  --accent: #d2691e;
-  --accent-light: #e6945a;
-  --accent-dark: #b8621a;
-  --muted: #666666;
-  --border: #e6d4a8;
+  --bg: #e3f2fd;
+  --bg-alt: #bbdefb;
+  --text: #1a237e;
+  --logo-text: #448559;
+  --accent: #1976d2;
+  --accent-light: #42a5f5;
+  --accent-dark: #0d47a1;
+  --muted: #546e7a;
+  --border: #90caf9;
   --white: #ffffff;
   --shadow:
-    0 4px 6px -1px rgba(210, 105, 30, 0.1),
-    0 2px 4px -1px rgba(210, 105, 30, 0.06);
+    0 4px 6px -1px rgba(25, 118, 210, 0.1),
+    0 2px 4px -1px rgba(25, 118, 210, 0.06);
   --shadow-lg:
-    0 10px 15px -3px rgba(210, 105, 30, 0.1),
-    0 4px 6px -2px rgba(210, 105, 30, 0.05);
+    0 10px 15px -3px rgba(25, 118, 210, 0.1),
+    0 4px 6px -2px rgba(25, 118, 210, 0.05);
   --radius: 12px;
   --radius-sm: 6px;
 }
@@ -68,22 +69,10 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background: var(--bg);
-  background-image:
-    url('images/paw.svg'), url('images/paw.svg'), url('images/paw.svg'),
-    url('images/paw.svg'), url('images/paw.svg');
-  background-size:
-    70px 70px,
-    50px 50px,
-    60px 60px,
-    56px 56px,
-    64px 64px;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-position:
-    6% 18%,
-    92% 55%,
-    11% 78%,
-    85% 12%,
-    95% 90%;
+  background-image: url('images/blue-background.png');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--text);
   line-height: 1.6;
@@ -315,29 +304,19 @@ nav {
   transition: all 0.3s ease;
 }
 
-.nav-logo-text {
-  font-family: 'Mabook', sans-serif;
-  font-size: 1.4rem;
-  font-weight: normal;
-  color: var(--bg);
-  background: linear-gradient(135deg, #ff6b35, #d2691e);
-  padding: 0.5rem 1.2rem;
-  border-radius: 25px;
-  box-shadow: 0 4px 15px rgba(210, 105, 30, 0.3);
-  letter-spacing: 0.05em;
+.nav-logo-img {
+  height: 60px;
+  width: auto;
+  /* width: 80px; */
   transition: all 0.3s ease;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  filter: drop-shadow(0 4px 15px rgba(25, 118, 210, 0.3));
+  margin-top: -5px;
+  margin-bottom: -5px;
 }
 
-.nav-logo:hover .nav-logo-text {
+.nav-logo:hover .nav-logo-img {
   transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(210, 105, 30, 0.4);
-  background: linear-gradient(135deg, #ff7a47, #e6945a);
+  filter: drop-shadow(0 6px 20px rgba(25, 118, 210, 0.4));
 }
 
 .nav-menu {
@@ -404,17 +383,39 @@ header.hero::before {
   z-index: 2;
   text-align: center;
   padding: 2rem 1rem;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.hero-logo {
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease-out;
+  filter: drop-shadow(0 8px 25px rgba(25, 118, 210, 0.3));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo-img {
+  height: 200px;
+  width: auto;
+  margin-bottom: -69px;
 }
 
 .hero-title {
   font-family: 'Mabook', sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   margin: 0;
-  color: var(--accent);
+  color: var(--logo-text);
   /* text-transform: uppercase; */
-  animation: fadeInUp 0.8s ease-out;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  text-align: center;
+  /* filter: drop-shadow(0 8px 25px rgba(25, 118, 210, 0.3)); */
 }
 
 .hero-image {
@@ -503,15 +504,6 @@ header.hero p {
   background: var(--accent);
   color: var(--white);
   transform: translateY(-2px);
-}
-
-/* Remove old hero logo styles as we moved it to nav */
-.hero-logo {
-  display: none;
-}
-
-.hero-logo-img {
-  display: none;
 }
 
 /* ---------- Sections (Mobile First) ---------- */
@@ -803,9 +795,9 @@ section h2::after {
   position: relative;
   background: radial-gradient(
     circle at center,
-    /* Shape is a circle, origin is the center */ #ffe082,
-    /* Lighter yellow/orange for the center */ #f0b04a,
-    /* Medium orange */ #e6a040 /* Darker orange/brown for the outer edge */
+    /* Shape is a circle, origin is the center */ #bbdefb,
+    /* Lighter blue for the center */ #64b5f6,
+    /* Medium blue */ #42a5f5 /* Darker blue for the outer edge */
   );
   display: flex;
   align-items: center;
@@ -939,9 +931,9 @@ section h2::after {
   justify-content: center;
   background: radial-gradient(
     circle at center,
-    /* Shape is a circle, origin is the center */ #ffe082,
-    /* Lighter yellow/orange for the center */ #f0b04a,
-    /* Medium orange */ #e6a040 /* Darker orange/brown for the outer edge */
+    /* Shape is a circle, origin is the center */ #bbdefb,
+    /* Lighter blue for the center */ #64b5f6,
+    /* Medium blue */ #42a5f5 /* Darker blue for the outer edge */
   );
 }
 
@@ -1509,9 +1501,10 @@ footer a:hover {
     min-height: 48px;
   }
 
-  .nav-logo-text {
-    font-size: 1.6rem;
-    padding: 0.6rem 1.4rem;
+  .nav-logo-img {
+    height: 74px;
+    margin-bottom: -10px;
+    margin-top: -10px;
   }
 
   .nav-menu {
@@ -1557,10 +1550,6 @@ footer a:hover {
 
   .hero-content {
     max-width: 600px;
-  }
-
-  .hero-title {
-    font-size: 4rem;
   }
 
   header.hero p {
@@ -1827,7 +1816,7 @@ footer a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: flex-start;
     text-align: left;
   }
 
@@ -1845,9 +1834,14 @@ footer a:hover {
     align-items: center;
   }
 
+  .hero-logo-img {
+    height: 260px;
+    margin-bottom: -80px;
+  }
+
   .hero-title {
-    font-size: 5rem;
-    margin: 0 0 2rem 0;
+    font-size: 3rem;
+    margin: 0;
   }
 
   header.hero p {
@@ -1859,6 +1853,7 @@ footer a:hover {
     display: flex; /* Show desktop buttons */
     gap: 2rem;
     align-items: flex-start;
+    margin-top: 80;
   }
 
   .hero-cta-mobile {
@@ -1867,8 +1862,8 @@ footer a:hover {
 
   .button {
     min-width: 250px;
-    padding: 1.2rem 2.5rem;
-    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
   }
 
   /* Update sections for fixed nav */
@@ -2016,8 +2011,8 @@ footer a:hover {
 
   /* Buttons for desktop */
   .button {
-    padding: 1.4rem 3rem;
-    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
     min-width: 250px;
   }
 
@@ -2055,10 +2050,6 @@ footer a:hover {
          LARGE DESKTOP STYLES (MIN-WIDTH: 1200px)
          ======================================== */
 @media (min-width: 1200px) {
-  .hero-title {
-    font-size: 6rem;
-  }
-
   header.hero p {
     font-size: 1.5rem;
   }
@@ -2073,8 +2064,8 @@ footer a:hover {
 
   /* Buttons for large desktop */
   .button {
-    padding: 1.5rem 3.5rem;
-    font-size: 1.3rem;
+    padding: 1.1rem 2.5rem;
+    font-size: 1rem;
     min-width: 280px;
   }
 
