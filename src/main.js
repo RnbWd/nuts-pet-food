@@ -478,3 +478,95 @@ slideshowContainer.addEventListener('contextmenu', (e) => {
 
 // Start the slideshow
 startAutoSlide();
+
+// Photo Gallery Filtering Functionality
+const galleryFilterBtns = document.querySelectorAll('.filter-btn');
+const photoItems = document.querySelectorAll('.photo-item');
+
+function filterPhotos(category) {
+  photoItems.forEach((item) => {
+    const itemCategory = item.getAttribute('data-category');
+
+    if (category === 'all' || itemCategory === category) {
+      item.classList.remove('hidden');
+      item.classList.add('visible');
+    } else {
+      item.classList.add('hidden');
+      item.classList.remove('visible');
+    }
+  });
+}
+
+// Initialize gallery - show all photos
+filterPhotos('all');
+
+// Add click event listeners to filter buttons
+galleryFilterBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    // Remove active class from all buttons
+    galleryFilterBtns.forEach((b) => b.classList.remove('active'));
+
+    // Add active class to clicked button
+    btn.classList.add('active');
+
+    // Get filter category and filter photos
+    const filterCategory = btn.getAttribute('data-filter');
+    filterPhotos(filterCategory);
+  });
+});
+
+// Photo Gallery Lightbox Functionality (Optional Enhancement)
+photoItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    const img = item.querySelector('img');
+    const overlay = item.querySelector('.photo-overlay');
+    const title = overlay ? overlay.querySelector('h4').textContent : '';
+    const category = overlay
+      ? overlay.querySelector('.photo-category').textContent
+      : '';
+
+    // Create lightbox modal
+    const lightbox = document.createElement('div');
+    lightbox.className = 'photo-lightbox';
+    lightbox.innerHTML = `
+      <div class="lightbox-content">
+        <span class="lightbox-close">&times;</span>
+        <img src="${img.src}" alt="${img.alt}" class="lightbox-image">
+        <div class="lightbox-info">
+          <span class="lightbox-category">${category}</span>
+          <h3 class="lightbox-title">${title}</h3>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(lightbox);
+
+    // Show lightbox
+    setTimeout(() => lightbox.classList.add('show'), 10);
+
+    // Close lightbox functionality
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.remove('show');
+      setTimeout(() => document.body.removeChild(lightbox), 300);
+    });
+
+    // Close on background click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('show');
+        setTimeout(() => document.body.removeChild(lightbox), 300);
+      }
+    });
+
+    // Close with Escape key
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        lightbox.classList.remove('show');
+        setTimeout(() => document.body.removeChild(lightbox), 300);
+        document.removeEventListener('keydown', handleEscape);
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+  });
+});
