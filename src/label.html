@@ -8,13 +8,12 @@
       /* BRAND TOKENS – tweak me! */
       /* ======================== */
       :root {
-        --label-green: #408457;
-        --ribbon-blue: #379ccf; /* darkest brand blue                      */
-        --ocean-blue: #e0f2fe; /* light blue – upper body background      */
-        --sky-blue: #60a5fa; /* lower body colour                        */
+        --label-green: #408457; /* main green color for top section */
+        --label-coral: #e67e22; /* coral/orange color for bottom section */
+        --ribbon-blue: #379ccf; /* darkest brand blue for top ribbon */
         --text-light: #fff;
-        --text-dark: #f8fafc; /* light color for NUTS logo               */
-        --natural-brown: #8b4513; /* saddle brown for natural ingredients */
+        --text-dark: #f8fafc; /* light color for NUTS logo */
+        --natural-brown: #1a2e1a; /* dark green-black for natural ingredients - works well with coral */
         --font-sans: 'Poppins', system-ui, Helvetica, Arial, sans-serif;
       }
 
@@ -55,7 +54,7 @@
       /* 1 ▸ TOP QUALITY RIBBON */
       .label__ribbon {
         height: 38px;
-        background: var(--ribbon-blue);
+        background: var(--label-green);
         color: var(--text-light);
         display: flex;
         align-items: center;
@@ -67,24 +66,35 @@
         padding-left: 110px;
       }
 
-      /* 2 ▸ MAIN BACKGROUND SPLIT (blues) */
+      /* 2 ▸ MAIN BACKGROUND SPLIT (green top, red bottom) */
       .label__body {
         position: absolute;
         inset: 0;
         top: 38px; /* make room for ribbon */
         display: flex;
-        background-image: url('images/blue-background.png');
-        background-size: cover;
-        background-position: top;
-        background-repeat: repeat-x;
+        flex-direction: column;
+        z-index: 1;
       }
 
-      /*  upper blue half */
+      /*  upper section (green background) */
       .label__upper {
-        flex: 1;
-
-        /* we'll mask out the lower sky blue shape next */
+        flex: 0 0 45%;
+        background-image: url('images/green-background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat-x;
         position: relative;
+      }
+
+      /*  lower section (red background) */
+      .label__lower {
+        flex: 0 0 55%;
+        background-image: url('images/red-background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat-x;
+        position: relative;
+        z-index: 3;
       }
 
       /*  sky blue wave sitting on top via ::after, so no extra markup needed */
@@ -97,7 +107,18 @@
       /* clip-path: path('M0 90 C250 140 650 35 900 90 L900 282 L0 282 Z'); */
       /* } */
 
-      /* 3 ▸ NUTS logo image */
+      /* 3 ▸ Semi-circle background for logo area */
+      .label__logo-bg {
+        position: absolute;
+        top: 0px;
+        left: 80px;
+        width: 440px;
+        height: 420px;
+        z-index: 3;
+        transform: rotate(180deg);
+      }
+
+      /* 4 ▸ NUTS logo image */
       .label__logo {
         position: absolute;
         top: 15px;
@@ -107,7 +128,7 @@
         z-index: 10;
       }
 
-      /* 4 ▸ Dog character image */
+      /* 5 ▸ Dog character image */
       .label__dog {
         position: absolute;
         top: 110px;
@@ -117,7 +138,7 @@
         z-index: 10;
       }
 
-      /* 5 ▸ All-natural meal sticker */
+      /* 6 ▸ All-natural meal sticker */
       .label__sticker {
         position: absolute;
         top: 150px;
@@ -127,7 +148,7 @@
         z-index: 10;
       }
 
-      /* 6 ▸ Bottom stickers container */
+      /* 7 ▸ Bottom stickers container */
       .label__bottom-stickers {
         position: absolute;
         bottom: 10px;
@@ -139,7 +160,7 @@
         z-index: 10;
       }
 
-      /* 7 ▸ Individual bottom stickers */
+      /* 8 ▸ Individual bottom stickers */
       .label__bottom-sticker {
         width: 80px;
         height: auto;
@@ -251,7 +272,7 @@
         stroke-opacity: 1;
       }
 
-      /* 8 ▸ Vertical separator lines */
+      /* 12 ▸ Vertical separator lines */
       .label__separator {
         width: 2px;
         height: 50px;
@@ -268,8 +289,24 @@
         NO&nbsp;PRESERVATIVES&nbsp;&nbsp;•&nbsp;&nbsp;NO&nbsp;ADD-ONS&nbsp;&nbsp;•&nbsp;&nbsp;NO&nbsp;FILLERS
       </div>
 
-      <!-- colour blocks (pure CSS) -->
-      <div class="label__body"></div>
+      <!-- colour blocks (green and red backgrounds) -->
+      <div class="label__body">
+        <svg
+          class="label__logo-bg"
+          viewBox="0 0 300 350"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M300 350 Q150 0 0 350 L0 350 L300 350 Z"
+            fill="#ebd8bc"
+            opacity="0.8"
+          />
+        </svg>
+        <div class="label__upper"></div>
+        <div class="label__lower"></div>
+      </div>
+      <!-- Semi-circle background for logo area -->
+
       <!-- NUTS logo image -->
       <img src="images/nuts-label.png" alt="NUTS" class="label__logo" />
 
