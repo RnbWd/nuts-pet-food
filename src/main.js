@@ -38,9 +38,80 @@ document.querySelectorAll('.animate-on-scroll').forEach((el) => {
   observer.observe(el);
 });
 
-// Enhanced scroll effect for navigation
-let lastScrollY = 0;
+// Enhanced scroll effect for navigation (add subtle background & shadow on scroll)
 const nav = document.querySelector('nav');
+function updateNavScrolledState() {
+  if (!nav) return;
+  if (window.scrollY > 8) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+}
+updateNavScrolledState();
+window.addEventListener('scroll', updateNavScrolledState, { passive: true });
+
+// Simple SPA-like routing: show only hero by default, reveal sections when nav clicked
+const routeSections = document.querySelectorAll('.route-section');
+const bodyEl = document.body;
+
+function clearActiveRoutes() {
+  routeSections.forEach((sec) => sec.classList.remove('active'));
+}
+
+function showRoute(routeId) {
+  clearActiveRoutes();
+  const target = document.querySelector(`[data-route="${routeId}"]`);
+  if (target) {
+    target.classList.add('active');
+    bodyEl.classList.add('page-active');
+    history.pushState({ routeId }, '', `#${routeId}`);
+  } else {
+    bodyEl.classList.remove('page-active');
+    history.pushState({ routeId: '' }, '', '#');
+  }
+}
+
+// Default: hero-only on load (no extra sections)
+showRoute('');
+
+// Nav routing for both mobile and desktop
+function navigateTo(routeId) {
+  showRoute(routeId);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.querySelectorAll('.nav-menu a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (e) => {
+    const id = link.getAttribute('href').replace('#', '') || '';
+    if (id) {
+      e.preventDefault();
+      navigateTo(id);
+    }
+  });
+});
+
+// Support hash-based direct links (deep-linking)
+window.addEventListener('load', () => {
+  const hash = window.location.hash.replace('#', '');
+  if (hash) showRoute(hash);
+});
+
+// Handle back/forward navigation
+window.addEventListener('popstate', () => {
+  const hash = window.location.hash.replace('#', '');
+  if (hash) {
+    clearActiveRoutes();
+    const target = document.querySelector(`[data-route="${hash}"]`);
+    if (target) {
+      target.classList.add('active');
+      bodyEl.classList.add('page-active');
+    }
+  } else {
+    clearActiveRoutes();
+    bodyEl.classList.remove('page-active');
+  }
+});
 
 // Product data with ingredients
 const productData = {
@@ -252,6 +323,7 @@ const modalName = document.getElementById('modal-product-name');
 const modalPrice = document.getElementById('modal-product-price');
 const modalIngredients = document.getElementById('modal-ingredients-list');
 const closeModal = document.querySelector('.close');
+const modalOrderLink = document.getElementById('modal-order-link');
 
 // Function to get the appropriate image based on product category
 function getProductImage(productId) {
@@ -279,6 +351,14 @@ document.querySelectorAll('.product-card').forEach((card) => {
       modalImage.alt = product.name;
       modalName.textContent = product.name;
       modalPrice.textContent = product.price;
+
+      // Prefill WhatsApp order message
+      if (modalOrderLink) {
+        const base = 'https://wa.me/6287861808065';
+        const message = `Hello! I would like to order: ${product.name} – ${product.price}. Could you please help with delivery to South/Central Bali?`;
+        const url = `${base}?text=${encodeURIComponent(message)}`;
+        modalOrderLink.href = url;
+      }
 
       // Clear and populate ingredients
       modalIngredients.innerHTML = '';
@@ -497,23 +577,22 @@ function filterPhotos(category) {
   });
 }
 
-// Initialize gallery - show all photos
-filterPhotos('all');
+// Initialize gallery - show all photos if gallery exists
+if (photoItems.length > 0) {
+  filterPhotos('all');
+}
 
 // Add click event listeners to filter buttons
-galleryFilterBtns.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    // Remove active class from all buttons
-    galleryFilterBtns.forEach((b) => b.classList.remove('active'));
-
-    // Add active class to clicked button
-    btn.classList.add('active');
-
-    // Get filter category and filter photos
-    const filterCategory = btn.getAttribute('data-filter');
-    filterPhotos(filterCategory);
+if (galleryFilterBtns.length > 0) {
+  galleryFilterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      galleryFilterBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filterCategory = btn.getAttribute('data-filter');
+      filterPhotos(filterCategory);
+    });
   });
-});
+}
 
 // Photo Gallery Lightbox Functionality (Optional Enhancement)
 photoItems.forEach((item) => {

@@ -100,15 +100,34 @@
         </a>
         <div class="nav-menu">
           <ul>
+            <li class="nav-cta">
+              <a
+                href="https://wa.me/6287861808065?text=Hi%20Nuts%20Pet%20Food!%20I%E2%80%99d%20like%20to%20order%20fresh%20meals%20for%20my%20pet.%20Can%20you%20help%20me%20place%20an%20order%20today%3F"
+                target="_blank"
+                rel="noopener"
+                >Order WhatsApp</a
+              >
+            </li>
             <li><a href="#about" class="nav-about">About</a></li>
-            <li><a href="#recipes">Recipes</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#order">Order Now</a></li>
+            <li><a href="#stories">Story</a></li>
+            <li><a href="#recipes">Menu</a></li>
+
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
+    <!-- Floating WhatsApp CTA -->
+    <a
+      href="https://wa.me/6287861808065?text=Hi%20Nuts%20Pet%20Food!%20I%E2%80%99d%20like%20to%20order%20fresh%20meals%20for%20my%20pet.%20Can%20you%20help%20me%20place%20an%20order%20today%3F"
+      class="whatsapp-fab"
+      aria-label="Order on WhatsApp"
+      target="_blank"
+      rel="noopener"
+      title="Order on WhatsApp"
+    >
+      📱 Order on WhatsApp
+    </a>
 
     <!-- Hero section with full background -->
     <header id="hero" class="hero">
@@ -121,53 +140,43 @@
               class="hero-logo-img"
             />
           </div>
-          <h1 class="hero-title">PET FOOD</h1>
-          <div class="hero-cta">
-            <a href="#order" class="button button--primary"> SHOP NOW </a>
-            <a href="#about" class="button button--secondary button--animated">
-              SEE INGREDIENTS
-            </a>
+          <h1 class="hero-title">Natural Pet Food, Handmade in Bali</h1>
+          <p class="hero-subtitle">
+            One‑tap ordering on WhatsApp. Fresh, human‑grade meals — cooked by
+            our family in Bali and delivered across South & Central Bali.
+          </p>
+          <div class="trust-badges" aria-label="Key product highlights">
+            <div class="trust-badge">
+              <img
+                src="images/natural-ingredients-icon.svg"
+                alt="Natural ingredients icon"
+              />
+              <span>Natural Ingredients</span>
+            </div>
+            <div class="trust-badge">
+              <img src="images/weight.svg" alt="500 grams per can icon" />
+              <span>500g per Can</span>
+            </div>
+            <div class="trust-badge">
+              <img src="images/paw.svg" alt="Made in Bali icon" />
+              <span>Family‑Owned in Bali</span>
+            </div>
           </div>
-        </div>
-        <div class="hero-image">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="
-                images/dog-bike/dog-bike600w.webp  600w,
-                images/dog-bike/dog-bike900w.webp  900w,
-                images/dog-bike/dog-bike.webp     1024w
-              "
-              sizes="(min-width: 1024px) 500px, 400px"
-              type="image/webp"
-            />
-            <source
-              srcset="
-                images/dog-bike/dog-bike300w.webp 300w,
-                images/dog-bike/dog-bike600w.webp 600w
-              "
-              sizes="300px"
-              type="image/webp"
-            />
-            <img
-              src="images/dog-bike/dog-bike300w.png"
-              alt="Happy dog on bike with Nuts Pet Food"
-              class="hero-dog-img"
-              sizes="300px"
-            />
-          </picture>
-        </div>
-        <div class="hero-cta-mobile">
-          <a href="#order" class="button button--primary"> SHOP NOW </a>
-          <a href="#about" class="button button--secondary button--animated">
-            SEE INGREDIENTS
-          </a>
+          <div class="hero-cta">
+            <a href="#recipes" class="button button--secondary button--animated"
+              >SEE MENU</a
+            >
+          </div>
         </div>
       </div>
     </header>
 
     <!-- ================= ABOUT ================= -->
-    <section id="about" class="animate-on-scroll">
+    <section
+      id="about"
+      class="animate-on-scroll route-section"
+      data-route="about"
+    >
       <h2>Why Dogs Go Nuts for Us!</h2>
       <div class="features-slideshow">
         <div class="slideshow-with-arrows">
@@ -275,7 +284,10 @@
     </section>
 
     <!-- ================= SOCIAL PROOF ================= -->
-    <section class="social-proof animate-on-scroll">
+    <section
+      class="social-proof animate-on-scroll route-section"
+      data-route="social"
+    >
       <!-- <div class="testimonial">
         "My Golden Retriever Max has never been healthier! His coat is shinier,
         he has more energy, and he actually gets excited at meal time. Nuts Dog
@@ -291,8 +303,45 @@
       <div class="testimonial-author">— Avi, Founder & Head Chef</div>
     </section>
 
+    <!-- ================= OUR STORY ================= -->
+    <section
+      id="stories"
+      class="story animate-on-scroll route-section"
+      data-route="stories"
+    >
+      <div class="story-grid">
+        <div class="story-image">
+          <img src="images/nuts-logo.png" alt="Nuts Pet Food family brand" />
+        </div>
+        <div class="story-content">
+          <h2>Our Family Story</h2>
+          <p>
+            We’re a small family kitchen in Bali, led by Avi, a lifelong dog
+            lover who cooks every batch by hand. Our recipes are inspired by
+            wholesome home cooking — the kind you’d feel good serving at your
+            own table — gently prepared for pets.
+          </p>
+          <p>
+            We use fresh meat and seasonal vegetables from local markets. No
+            preservatives, no shortcuts. Just real food that nourishes and keeps
+            tails wagging.
+          </p>
+          <p class="signature">— Avi & Family</p>
+          <div class="story-ctas">
+            <a href="#recipes" class="button button--primary"
+              >Explore the Menu</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= RECIPES ================= -->
-    <section id="recipes" class="animate-on-scroll">
+    <section
+      id="recipes"
+      class="animate-on-scroll route-section"
+      data-route="recipes"
+    >
       <h2>Our Artisan Pet Food Menu</h2>
       <p class="recipe-intro">
         Every meal is hand-crafted with love, using only the finest ingredients
@@ -850,175 +899,7 @@
       </div>
     </section>
 
-    <!-- ================= PHOTO GALLERY ================= -->
-    <section id="gallery" class="animate-on-scroll">
-      <h2>Our Happy Pack in Action</h2>
-      <p class="gallery-intro">
-        See the love in action! From our fresh ingredients to happy pets and
-        their families enjoying every meal.
-      </p>
-
-      <!-- Filter Buttons -->
-      <div class="gallery-filters">
-        <button class="filter-btn active" data-filter="all">
-          <span role="img" aria-label="All">🏠</span> All Photos
-        </button>
-        <button class="filter-btn" data-filter="food">
-          <span role="img" aria-label="Food">🥘</span> Fresh Food
-        </button>
-        <button class="filter-btn" data-filter="pets">
-          <span role="img" aria-label="Pets">🐕</span> Happy Pets
-        </button>
-        <button class="filter-btn" data-filter="family">
-          <span role="img" aria-label="Family">👨‍👩‍👧‍👦</span> Family
-        </button>
-        <button class="filter-btn" data-filter="ingredients">
-          <span role="img" aria-label="Ingredients">🌿</span> Natural
-        </button>
-      </div>
-
-      <!-- Photo Grid -->
-      <div class="photo-grid">
-        <div class="photo-item photo-item--large" data-category="food">
-          <img
-            src="images/chicken-with-tuna-dog.png"
-            alt="Fresh chicken with tuna dog food"
-            loading="lazy"
-          />
-          <div class="photo-overlay">
-            <span class="photo-category">Fresh Food</span>
-            <h4>Chicken with Tuna</h4>
-          </div>
-        </div>
-
-        <div class="photo-item" data-category="pets">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="images/dog-transparent/dog-transparent200w.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="images/dog-transparent/dog-transparent150w.webp"
-              type="image/webp"
-            />
-            <img
-              src="images/dog-transparent/dog-transparent150w.png"
-              alt="Happy dog enjoying meal time"
-              loading="lazy"
-            />
-          </picture>
-          <div class="photo-overlay">
-            <span class="photo-category">Happy Pets</span>
-            <h4>Meal Time Joy</h4>
-          </div>
-        </div>
-
-        <div class="photo-item" data-category="ingredients">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="images/cat-transparent/cat-transparent200w.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="images/cat-transparent/cat-transparent150w.webp"
-              type="image/webp"
-            />
-            <img
-              src="images/cat-transparent/cat-transparent150w.png"
-              alt="Cat enjoying fresh ingredients"
-              loading="lazy"
-            />
-          </picture>
-          <div class="photo-overlay">
-            <span class="photo-category">Feline Friends</span>
-            <h4>Cat Approved</h4>
-          </div>
-        </div>
-
-        <div class="photo-item photo-item--tall" data-category="family">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="images/dog-bike/dog-bike600w.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="images/dog-bike/dog-bike300w.webp"
-              type="image/webp"
-            />
-            <img
-              src="images/dog-bike/dog-bike300w.png"
-              alt="Family adventure with happy dog"
-              loading="lazy"
-            />
-          </picture>
-          <div class="photo-overlay">
-            <span class="photo-category">Family Life</span>
-            <h4>Adventure Ready</h4>
-          </div>
-        </div>
-
-        <div class="photo-item" data-category="pets">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="images/puppy-transparent/puppy-transparent200w.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="images/puppy-transparent/puppy-transparent150w.webp"
-              type="image/webp"
-            />
-            <img
-              src="images/puppy-transparent/puppy-transparent150w.png"
-              alt="Playful puppy at feeding time"
-              loading="lazy"
-            />
-          </picture>
-          <div class="photo-overlay">
-            <span class="photo-category">Growing Pups</span>
-            <h4>Puppy Power</h4>
-          </div>
-        </div>
-
-        <div class="photo-item" data-category="ingredients">
-          <picture>
-            <source
-              media="(min-width: 768px)"
-              srcset="images/kitten-transparent/kitten-transparent200w.webp"
-              type="image/webp"
-            />
-            <source
-              srcset="images/kitten-transparent/kitten-transparent150w.webp"
-              type="image/webp"
-            />
-            <img
-              src="images/kitten-transparent/kitten-transparent150w.png"
-              alt="Curious kitten exploring food"
-              loading="lazy"
-            />
-          </picture>
-          <div class="photo-overlay">
-            <span class="photo-category">Little Ones</span>
-            <h4>Kitten Curiosity</h4>
-          </div>
-        </div>
-
-        <div class="photo-item photo-item--wide" data-category="food">
-          <img
-            src="images/nuts-logo.png"
-            alt="Nuts Pet Food premium ingredients"
-            loading="lazy"
-          />
-          <div class="photo-overlay">
-            <span class="photo-category">Our Brand</span>
-            <h4>Quality Promise</h4>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- ================= PHOTO GALLERY (REMOVED) ================= -->
 
     <!-- ================= ORDERING ================= -->
     <section id="order" class="animate-on-scroll">
@@ -1028,19 +909,6 @@
           We deliver fresh meals across
           <strong>South & Central Bali</strong> Monday through Friday.
         </p>
-
-        <!-- Mobile-only WhatsApp button -->
-        <div class="mobile-order-button">
-          <a
-            class="button button--primary"
-            href="https://wa.me/6287861808065"
-            target="_blank"
-            rel="noopener"
-          >
-            <span role="img" aria-label="Mobile phone">📱</span> Order via
-            WhatsApp
-          </a>
-        </div>
 
         <div class="order-steps">
           <div class="step">
@@ -1138,6 +1006,7 @@
             <div class="modal-actions">
               <a
                 href="https://wa.me/6287861808065"
+                id="modal-order-link"
                 class="button button--primary"
                 target="_blank"
               >
