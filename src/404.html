@@ -7,8 +7,12 @@
       // Redirect all 404s back to index.html and preserve path
       var section = window.location.pathname.replace(/^\/+/, '');
       console.log(section);
-      if (section && section !== 'index.html') {
+      if (section && section !== 'v2' && section !== 'label') {
         window.location.replace('/#' + section);
+      } else if (section === 'sitemap') {
+        window.location.replace('/sitemap.xml');
+      } else if (section === 'robots') {
+        window.location.replace('/robots.txt');
       } else {
         window.location.replace('/');
       }
