@@ -100,6 +100,9 @@
         </a>
         <div class="nav-menu">
           <ul>
+            <li><a href="#about" class="nav-about">About</a></li>
+
+            <li><a href="#contact">Contact</a></li>
             <li class="nav-cta">
               <a
                 href="https://wa.me/6287861808065?text=Hi%20Nuts%20Pet%20Food!%20I%E2%80%99d%20like%20to%20order%20fresh%20meals%20for%20my%20pet.%20Can%20you%20help%20me%20place%20an%20order%20today%3F"
@@ -108,17 +111,12 @@
                 >Order WhatsApp</a
               >
             </li>
-            <li><a href="#about" class="nav-about">About</a></li>
-            <li><a href="#stories">Story</a></li>
-            <li><a href="#recipes">Menu</a></li>
-
-            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
     <!-- Floating WhatsApp CTA -->
-    <a
+    <!-- <a
       href="https://wa.me/6287861808065?text=Hi%20Nuts%20Pet%20Food!%20I%E2%80%99d%20like%20to%20order%20fresh%20meals%20for%20my%20pet.%20Can%20you%20help%20me%20place%20an%20order%20today%3F"
       class="whatsapp-fab"
       aria-label="Order on WhatsApp"
@@ -127,66 +125,120 @@
       title="Order on WhatsApp"
     >
       📱 Order on WhatsApp
-    </a>
+    </a> -->
 
     <!-- Hero section with full background -->
     <header id="hero" class="hero">
+      <div
+        class="trust-badges trust-badges--top"
+        aria-label="No additives badges"
+      >
+        <div class="trust-badge">
+          <span
+            class="trust-badge-emoji"
+            role="img"
+            aria-label="No preservatives"
+            >🚫</span
+          >
+          <span>No Preservatives</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-badge-emoji" role="img" aria-label="No add-ons"
+            >🚫</span
+          >
+          <span>No Add‑ons</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-badge-emoji" role="img" aria-label="No fillers"
+            >🚫</span
+          >
+          <span>No Fillers</span>
+        </div>
+      </div>
       <div class="hero-content">
-        <div class="hero-left">
-          <div class="hero-logo">
-            <img
-              src="images/nuts-label.png"
-              alt="Nuts Pet Food Logo"
-              class="hero-logo-img"
-            />
-          </div>
-          <h1 class="hero-title">Natural Pet Food, Handmade in Bali</h1>
-          <p class="hero-subtitle">
-            One‑tap ordering on WhatsApp. Fresh, human‑grade meals — cooked by
-            our family in Bali and delivered across South & Central Bali.
-          </p>
-          <div class="trust-badges" aria-label="Key product highlights">
-            <div class="trust-badge">
-              <img
-                src="images/natural-ingredients-icon.svg"
-                alt="Natural ingredients icon"
-              />
-              <span>Natural Ingredients</span>
-            </div>
-            <div class="trust-badge">
-              <img src="images/weight.svg" alt="500 grams per can icon" />
-              <span>500g per Can</span>
-            </div>
-            <div class="trust-badge">
-              <img src="images/paw.svg" alt="Made in Bali icon" />
-              <span>Family‑Owned in Bali</span>
-            </div>
-          </div>
-          <div class="hero-cta">
-            <a href="#recipes" class="button button--secondary button--animated"
-              >SEE MENU</a
-            >
-          </div>
+        <img
+          src="images/nuts-label.png"
+          alt="Nuts Pet Food Logo"
+          class="hero-logo-img"
+        />
+
+        <h1 class="hero-title">Natural Pet Food, Handmade in Bali</h1>
+        <p class="hero-subtitle">
+          One‑tap ordering on WhatsApp. Fresh, human‑grade meals — cooked by our
+          family in Bali and delivered across South & Central Bali.
+        </p>
+        <div class="hero-cta">
+          <a href="#order" class="button button--secondary button--animated"
+            >ORDER NOW</a
+          >
+        </div>
+      </div>
+      <div
+        class="trust-badges trust-badges--bottom"
+        aria-label="Key product highlights"
+      >
+        <div class="trust-badge">
+          <img
+            src="images/natural-ingredients-icon.svg"
+            alt="Natural ingredients icon"
+          />
+          <span>Natural Ingredients</span>
+        </div>
+        <div class="trust-badge">
+          <img src="images/weight.svg" alt="500 grams per can icon" />
+          <span>500g per Can</span>
+        </div>
+        <div class="trust-badge">
+          <img src="images/paw.svg" alt="Made in Bali icon" />
+          <span>Family‑Owned in Bali</span>
         </div>
       </div>
     </header>
 
+    <!-- ================= OUR STORY ================= -->
+    <section id="about" class="story animate-on-scroll">
+      <div class="story-grid">
+        <div class="story-image">
+          <video
+            id="storyVideo"
+            src="images/nuts-video.mp4"
+            poster="images/nuts-logo.png"
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+        <div class="story-content">
+          <h2>Our Family Story</h2>
+          <p>
+            We’re a small family kitchen in Bali, led by Avi, a lifelong dog
+            lover who cooks every batch by hand. Our recipes are inspired by
+            wholesome home cooking — the kind you’d feel good serving at your
+            own table — gently prepared for pets.
+          </p>
+          <p>
+            We use fresh meat and seasonal vegetables from local markets. No
+            preservatives, no shortcuts. Just real food that nourishes and keeps
+            tails wagging.
+          </p>
+          <p class="signature">— Avi & Family</p>
+          <div class="story-ctas">
+            <a href="#order" class="button button--primary">Explore the Menu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= ABOUT ================= -->
-    <section
-      id="about"
-      class="animate-on-scroll route-section"
-      data-route="about"
-    >
-      <h2>Why Dogs Go Nuts for Us!</h2>
+    <section class="animate-on-scroll">
       <div class="features-slideshow">
         <div class="slideshow-with-arrows">
           <!-- Navigation arrows -->
           <button
             class="slide-arrow slide-arrow--prev"
             aria-label="Previous slide"
-          >
-            &lt;
-          </button>
+          ></button>
 
           <div class="slideshow-container">
             <div class="slide active">
@@ -247,9 +299,10 @@
             </div>
           </div>
 
-          <button class="slide-arrow slide-arrow--next" aria-label="Next slide">
-            &gt;
-          </button>
+          <button
+            class="slide-arrow slide-arrow--next"
+            aria-label="Next slide"
+          ></button>
         </div>
 
         <!-- Dots indicator -->
@@ -284,10 +337,7 @@
     </section>
 
     <!-- ================= SOCIAL PROOF ================= -->
-    <section
-      class="social-proof animate-on-scroll route-section"
-      data-route="social"
-    >
+    <section class="social-proof animate-on-scroll">
       <!-- <div class="testimonial">
         "My Golden Retriever Max has never been healthier! His coat is shinier,
         he has more energy, and he actually gets excited at meal time. Nuts Dog
@@ -303,602 +353,6 @@
       <div class="testimonial-author">— Avi, Founder & Head Chef</div>
     </section>
 
-    <!-- ================= OUR STORY ================= -->
-    <section
-      id="stories"
-      class="story animate-on-scroll route-section"
-      data-route="stories"
-    >
-      <div class="story-grid">
-        <div class="story-image">
-          <img src="images/nuts-logo.png" alt="Nuts Pet Food family brand" />
-        </div>
-        <div class="story-content">
-          <h2>Our Family Story</h2>
-          <p>
-            We’re a small family kitchen in Bali, led by Avi, a lifelong dog
-            lover who cooks every batch by hand. Our recipes are inspired by
-            wholesome home cooking — the kind you’d feel good serving at your
-            own table — gently prepared for pets.
-          </p>
-          <p>
-            We use fresh meat and seasonal vegetables from local markets. No
-            preservatives, no shortcuts. Just real food that nourishes and keeps
-            tails wagging.
-          </p>
-          <p class="signature">— Avi & Family</p>
-          <div class="story-ctas">
-            <a href="#recipes" class="button button--primary"
-              >Explore the Menu</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= RECIPES ================= -->
-    <section
-      id="recipes"
-      class="animate-on-scroll route-section"
-      data-route="recipes"
-    >
-      <h2>Our Artisan Pet Food Menu</h2>
-      <p class="recipe-intro">
-        Every meal is hand-crafted with love, using only the finest ingredients
-        sourced locally in Bali. From playful puppies to wise old cats, we have
-        something special for every furry family member.
-      </p>
-
-      <!-- Category Navigation -->
-      <div class="category-nav">
-        <button class="category-btn active" data-category="dog-raw">
-          <span role="img" aria-label="Dog">🐕</span> Raw Dog Food
-        </button>
-        <button class="category-btn" data-category="dog-cooked">
-          <span role="img" aria-label="Fire">🔥</span> Cooked Dog Food
-        </button>
-        <button class="category-btn" data-category="cat">
-          <span role="img" aria-label="Cat">🐱</span> Cat Food
-        </button>
-        <button class="category-btn" data-category="puppy">
-          <span role="img" aria-label="Puppy">🐶</span> Puppy Food
-        </button>
-      </div>
-
-      <!-- DOG FOOD SECTION - RAW -->
-      <div class="product-section active" id="dog-raw">
-        <div class="section-header">
-          <h3><span role="img" aria-label="Dog">🐕</span> Raw Dog Food</h3>
-          <p>Tail-wagging nutrition for your loyal companion</p>
-        </div>
-        <div class="products-scroll">
-          <div class="product-card" data-product="raw-chicken-tuna">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/dog-transparent/dog-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/dog-transparent/dog-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/dog-transparent/dog-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/dog-transparent/dog-transparent100w.png"
-                  alt="Dog transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Fish">🐟</span> Raw Chicken with
-                Tuna
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-          <div class="product-card" data-product="raw-chicken-gizzard">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/dog-transparent/dog-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/dog-transparent/dog-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/dog-transparent/dog-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/dog-transparent/dog-transparent100w.png"
-                  alt="Dog transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Meat">🥩</span> Raw Chicken with
-                Gizzard
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-          <div class="product-card" data-product="raw-chicken-liver">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/dog-transparent/dog-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/dog-transparent/dog-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/dog-transparent/dog-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/dog-transparent/dog-transparent100w.png"
-                  alt="Dog transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Chicken">🐔</span> Raw Chicken with
-                Liver
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- DOG FOOD SECTION - COOKED -->
-      <div class="product-section" id="dog-cooked">
-        <div class="section-header">
-          <h3><span role="img" aria-label="Fire">🔥</span> Cooked Dog Food</h3>
-          <p>Gently cooked nutrition for sensitive stomachs</p>
-        </div>
-        <div class="products-scroll">
-          <div class="product-card" data-product="cooked-chicken-tuna">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/dog-transparent/dog-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/dog-transparent/dog-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/dog-transparent/dog-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/dog-transparent/dog-transparent100w.png"
-                  alt="Dog transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Fire">🔥</span> Cooked Chicken with
-                Tuna
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-          <div class="product-card" data-product="cooked-chicken-gizzard">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/dog-transparent/dog-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/dog-transparent/dog-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/dog-transparent/dog-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/dog-transparent/dog-transparent100w.png"
-                  alt="Dog transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Fire">🔥</span> Cooked Chicken with
-                Gizzard
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-          <div class="product-card" data-product="cooked-chicken-liver">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/dog-transparent/dog-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/dog-transparent/dog-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/dog-transparent/dog-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/dog-transparent/dog-transparent100w.png"
-                  alt="Dog transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Fire">🔥</span> Cooked Chicken with
-                Liver
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CAT FOOD SECTION -->
-      <div class="product-section" id="cat">
-        <div class="section-header">
-          <h3><span role="img" aria-label="Cat">🐱</span> Gourmet Cat Food</h3>
-          <p>Purr-fectly balanced meals for your feline friend</p>
-        </div>
-        <div class="products-scroll">
-          <div class="product-card" data-product="cat-chicken-tuna">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/cat-transparent/cat-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/cat-transparent/cat-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/cat-transparent/cat-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/cat-transparent/cat-transparent100w.png"
-                  alt="Cat transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Fish">🐟</span> Chicken with Tuna
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-          <div class="product-card" data-product="cat-chicken-gizzard">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/cat-transparent/cat-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/cat-transparent/cat-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/cat-transparent/cat-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/cat-transparent/cat-transparent100w.png"
-                  alt="Cat transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Meat">🥩</span> Chicken with
-                Gizzard
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-          <div class="product-card" data-product="cat-chicken-liver">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/cat-transparent/cat-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/cat-transparent/cat-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/cat-transparent/cat-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/cat-transparent/cat-transparent100w.png"
-                  alt="Cat transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Chicken">🐔</span> Chicken with
-                Liver
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-          <div class="product-card" data-product="cat-mackerel-liver">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/cat-transparent/cat-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/cat-transparent/cat-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/cat-transparent/cat-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/cat-transparent/cat-transparent100w.png"
-                  alt="Cat transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Fish">🐟</span> Mackerel with
-                Chicken Liver
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-          <div class="product-card" data-product="cat-ocean-mackerel">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/cat-transparent/cat-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/cat-transparent/cat-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/cat-transparent/cat-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/cat-transparent/cat-transparent100w.png"
-                  alt="Cat transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Ocean">🌊</span> Ocean Fish with
-                Mackerel
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-          <div class="product-card" data-product="cat-sardine-gizzard">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/cat-transparent/cat-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/cat-transparent/cat-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/cat-transparent/cat-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/cat-transparent/cat-transparent100w.png"
-                  alt="Cat transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Fish">🐟</span> Sardine with
-                Chicken Gizzard
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PUPPY FOOD SECTION -->
-      <div class="product-section" id="puppy">
-        <div class="section-header">
-          <h3>
-            <span role="img" aria-label="Puppy">🐶</span> Puppy Growth Formula
-          </h3>
-          <p>
-            Special nutrition for growing puppies and their boundless energy
-          </p>
-        </div>
-        <div class="products-scroll">
-          <div class="product-card" data-product="puppy-chicken-tuna">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/puppy-transparent/puppy-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/puppy-transparent/puppy-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/puppy-transparent/puppy-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/puppy-transparent/puppy-transparent100w.png"
-                  alt="Puppy transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Fish">🐟</span> Chicken with Tuna
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-          <div class="product-card" data-product="puppy-chicken-gizzard">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/puppy-transparent/puppy-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/puppy-transparent/puppy-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/puppy-transparent/puppy-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/puppy-transparent/puppy-transparent100w.png"
-                  alt="Puppy transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Meat">🥩</span> Chicken with
-                Gizzard
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-          <div class="product-card" data-product="puppy-chicken-liver">
-            <div class="product-image">
-              <picture>
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/puppy-transparent/puppy-transparent150w.webp"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 768px)"
-                  srcset="images/puppy-transparent/puppy-transparent150w.png"
-                  type="image/png"
-                />
-                <source
-                  srcset="images/puppy-transparent/puppy-transparent100w.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="images/puppy-transparent/puppy-transparent100w.png"
-                  alt="Puppy transparent background"
-                />
-              </picture>
-            </div>
-            <div class="product-info">
-              <h4>
-                <span role="img" aria-label="Chicken">🐔</span> Chicken with
-                Liver
-              </h4>
-              <p class="product-price">25,000 RP</p>
-              <button class="product-details-btn">View Details</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="recipe-footer">
-        <h3>
-          <span role="img" aria-label="Heart">💝</span> Made with Love in Bali
-        </h3>
-        <p>
-          Every recipe is carefully crafted by our head chef Avi, using
-          traditional cooking methods and the freshest local ingredients. We
-          believe your pets deserve nothing but the best.
-        </p>
-      </div>
-    </section>
-
     <!-- ================= PHOTO GALLERY (REMOVED) ================= -->
 
     <!-- ================= ORDERING ================= -->
@@ -909,6 +363,103 @@
           We deliver fresh meals across
           <strong>South & Central Bali</strong> Monday through Friday.
         </p>
+
+        <div class="order-card" aria-label="Quick order form">
+          <form id="quickOrderForm" class="order-form" novalidate>
+            <div>
+              <label for="orderProduct">Recipe</label>
+              <div class="fancy-select">
+                <select id="orderProduct" required>
+                  <optgroup label="Raw Dog Food">
+                    <option value="raw-chicken-tuna">
+                      Raw Chicken with Tuna
+                    </option>
+                    <option value="raw-chicken-gizzard">
+                      Raw Chicken with Gizzard
+                    </option>
+                    <option value="raw-chicken-liver">
+                      Raw Chicken with Liver
+                    </option>
+                  </optgroup>
+                  <optgroup label="Cooked Dog Food">
+                    <option value="cooked-chicken-tuna">
+                      Cooked Chicken with Tuna
+                    </option>
+                    <option value="cooked-chicken-gizzard">
+                      Cooked Chicken with Gizzard
+                    </option>
+                    <option value="cooked-chicken-liver">
+                      Cooked Chicken with Liver
+                    </option>
+                  </optgroup>
+                  <optgroup label="Cat Food">
+                    <option value="cat-chicken-tuna">Chicken with Tuna</option>
+                    <option value="cat-chicken-gizzard">
+                      Chicken with Gizzard
+                    </option>
+                    <option value="cat-chicken-liver">
+                      Chicken with Liver
+                    </option>
+                    <option value="cat-mackerel-liver">
+                      Mackerel with Chicken Liver
+                    </option>
+                    <option value="cat-ocean-mackerel">
+                      Ocean Fish with Mackerel
+                    </option>
+                    <option value="cat-sardine-gizzard">
+                      Sardine with Chicken Gizzard
+                    </option>
+                  </optgroup>
+                  <optgroup label="Puppy Food">
+                    <option value="puppy-chicken-tuna">
+                      Chicken with Tuna
+                    </option>
+                    <option value="puppy-chicken-gizzard">
+                      Chicken with Gizzard
+                    </option>
+                    <option value="puppy-chicken-liver">
+                      Chicken with Liver
+                    </option>
+                  </optgroup>
+                </select>
+              </div>
+              <small class="order-hint"
+                >Selecting a recipe highlights it in the menu and shows details
+                below.</small
+              >
+            </div>
+
+            <div>
+              <label for="orderQty">Qty</label>
+              <input id="orderQty" type="number" min="1" value="2" required />
+            </div>
+            <div class="order-submit-wrap">
+              <button class="button button--primary" type="submit">
+                WhatsApp My Order
+              </button>
+            </div>
+          </form>
+
+          <div
+            id="orderProductInfo"
+            class="order-product-info"
+            aria-live="polite"
+          >
+            <div class="opi-image">
+              <img
+                id="orderInfoImage"
+                src="images/dog-transparent/dog-transparent150w.png"
+                alt="Selected product image"
+              />
+            </div>
+            <div class="opi-details">
+              <h3 id="orderInfoName">Select a recipe to see details</h3>
+              <p class="opi-price" id="orderInfoPrice"></p>
+              <p class="opi-size" id="orderInfoSize">Size: 500g</p>
+              <ul class="opi-ingredients" id="orderInfoIngredients"></ul>
+            </div>
+          </div>
+        </div>
 
         <div class="order-steps">
           <div class="step">

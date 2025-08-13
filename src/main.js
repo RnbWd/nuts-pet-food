@@ -51,73 +51,15 @@ function updateNavScrolledState() {
 updateNavScrolledState();
 window.addEventListener('scroll', updateNavScrolledState, { passive: true });
 
-// Simple SPA-like routing: show only hero by default, reveal sections when nav clicked
-const routeSections = document.querySelectorAll('.route-section');
-const bodyEl = document.body;
+// (Removed SPA-like routing to restore standard single-page scrolling)
 
-function clearActiveRoutes() {
-  routeSections.forEach((sec) => sec.classList.remove('active'));
-}
-
-function showRoute(routeId) {
-  clearActiveRoutes();
-  const target = document.querySelector(`[data-route="${routeId}"]`);
-  if (target) {
-    target.classList.add('active');
-    bodyEl.classList.add('page-active');
-    history.pushState({ routeId }, '', `#${routeId}`);
-  } else {
-    bodyEl.classList.remove('page-active');
-    history.pushState({ routeId: '' }, '', '#');
-  }
-}
-
-// Default: hero-only on load (no extra sections)
-showRoute('');
-
-// Nav routing for both mobile and desktop
-function navigateTo(routeId) {
-  showRoute(routeId);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-document.querySelectorAll('.nav-menu a[href^="#"]').forEach((link) => {
-  link.addEventListener('click', (e) => {
-    const id = link.getAttribute('href').replace('#', '') || '';
-    if (id) {
-      e.preventDefault();
-      navigateTo(id);
-    }
-  });
-});
-
-// Support hash-based direct links (deep-linking)
-window.addEventListener('load', () => {
-  const hash = window.location.hash.replace('#', '');
-  if (hash) showRoute(hash);
-});
-
-// Handle back/forward navigation
-window.addEventListener('popstate', () => {
-  const hash = window.location.hash.replace('#', '');
-  if (hash) {
-    clearActiveRoutes();
-    const target = document.querySelector(`[data-route="${hash}"]`);
-    if (target) {
-      target.classList.add('active');
-      bodyEl.classList.add('page-active');
-    }
-  } else {
-    clearActiveRoutes();
-    bodyEl.classList.remove('page-active');
-  }
-});
-
-// Product data with ingredients
+const price = '35,000 RP';
+// Product data with ingredients and preview images (used by order select)
 const productData = {
   'raw-chicken-tuna': {
     name: '🐟 Raw Chicken with Tuna',
-    price: '25,000 RP',
+    price,
+    image: 'images/dog-transparent/dog-transparent150w.png',
     ingredients: [
       'Fresh chicken breast and bone',
       'Premium tuna',
@@ -129,7 +71,8 @@ const productData = {
   },
   'raw-chicken-gizzard': {
     name: '🥩 Raw Chicken with Gizzard',
-    price: '25,000 RP',
+    price,
+    image: 'images/dog-transparent/dog-transparent150w.png',
     ingredients: [
       'Fresh chicken breast and bone',
       'Nutrient-rich chicken gizzard',
@@ -141,7 +84,8 @@ const productData = {
   },
   'raw-chicken-liver': {
     name: '🐔 Raw Chicken with Liver',
-    price: '25,000 RP',
+    price,
+    image: 'images/dog-transparent/dog-transparent150w.png',
     ingredients: [
       'Fresh chicken breast and bone',
       'Premium chicken liver',
@@ -153,7 +97,8 @@ const productData = {
   },
   'cooked-chicken-tuna': {
     name: '🔥 Cooked Chicken with Tuna',
-    price: '25,000 RP',
+    price,
+    image: 'images/dog-transparent/dog-transparent150w.png',
     ingredients: [
       'Tender chicken breast and bone',
       'Premium tuna',
@@ -164,7 +109,8 @@ const productData = {
   },
   'cooked-chicken-gizzard': {
     name: '🔥 Cooked Chicken with Gizzard',
-    price: '25,000 RP',
+    price,
+    image: 'images/dog-transparent/dog-transparent150w.png',
     ingredients: [
       'Tender chicken breast and bone',
       'Nutrient-rich chicken gizzard',
@@ -175,7 +121,8 @@ const productData = {
   },
   'cooked-chicken-liver': {
     name: '🔥 Cooked Chicken with Liver',
-    price: '25,000 RP',
+    price,
+    image: 'images/dog-transparent/dog-transparent150w.png',
     ingredients: [
       'Tender chicken breast and bone',
       'Premium chicken liver',
@@ -186,7 +133,8 @@ const productData = {
   },
   'cat-chicken-tuna': {
     name: '🐟 Chicken with Tuna',
-    price: '25,000 RP',
+    price,
+    image: 'images/cat-transparent/cat-transparent150w.png',
     ingredients: [
       'Fresh chicken breast and bone',
       'Premium tuna',
@@ -198,7 +146,8 @@ const productData = {
   },
   'cat-chicken-gizzard': {
     name: '🥩 Chicken with Gizzard',
-    price: '25,000 RP',
+    price,
+    image: 'images/cat-transparent/cat-transparent150w.png',
     ingredients: [
       'Fresh chicken breast and bone',
       'Nutrient-rich chicken gizzard',
@@ -210,7 +159,8 @@ const productData = {
   },
   'cat-chicken-liver': {
     name: '🐔 Chicken with Liver',
-    price: '25,000 RP',
+    price,
+    image: 'images/cat-transparent/cat-transparent150w.png',
     ingredients: [
       'Fresh chicken breast and bone',
       'Premium chicken liver',
@@ -222,7 +172,8 @@ const productData = {
   },
   'cat-mackerel-liver': {
     name: '🐟 Mackerel with Chicken Liver',
-    price: '25,000 RP',
+    price,
+    image: 'images/cat-transparent/cat-transparent150w.png',
     ingredients: [
       'Fresh mackerel',
       'Premium chicken liver',
@@ -234,7 +185,8 @@ const productData = {
   },
   'cat-ocean-mackerel': {
     name: '🌊 Ocean Fish with Mackerel',
-    price: '25,000 RP',
+    price,
+    image: 'images/cat-transparent/cat-transparent150w.png',
     ingredients: [
       'Premium ocean fish mix',
       'Fresh mackerel',
@@ -246,7 +198,8 @@ const productData = {
   },
   'cat-sardine-gizzard': {
     name: '🐟 Sardine with Chicken Gizzard',
-    price: '25,000 RP',
+    price,
+    image: 'images/cat-transparent/cat-transparent150w.png',
     ingredients: [
       'Premium sardine',
       'Nutrient-rich chicken gizzard',
@@ -258,7 +211,8 @@ const productData = {
   },
   'puppy-chicken-tuna': {
     name: '🐟 Chicken with Tuna',
-    price: '25,000 RP',
+    price,
+    image: 'images/puppy-transparent/puppy-transparent150w.png',
     ingredients: [
       'Fresh chicken breast and bone',
       'Premium tuna',
@@ -270,7 +224,8 @@ const productData = {
   },
   'puppy-chicken-gizzard': {
     name: '🥩 Chicken with Gizzard',
-    price: '25,000 RP',
+    price,
+    image: 'images/puppy-transparent/puppy-transparent150w.png',
     ingredients: [
       'Fresh chicken breast and bone',
       'Nutrient-rich chicken gizzard',
@@ -282,7 +237,8 @@ const productData = {
   },
   'puppy-chicken-liver': {
     name: '🐔 Chicken with Liver',
-    price: '25,000 RP',
+    price,
+    image: 'images/puppy-transparent/puppy-transparent150w.png',
     ingredients: [
       'Fresh chicken breast and bone',
       'Premium chicken liver',
@@ -649,3 +605,106 @@ photoItems.forEach((item) => {
     document.addEventListener('keydown', handleEscape);
   });
 });
+
+// Play/pause story video when in view
+(function initStoryVideoAutoplay() {
+  const video = document.getElementById('storyVideo');
+  if (!video) return;
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    },
+    { threshold: 0.35 }
+  );
+  io.observe(video);
+})();
+
+// ---------- Quick Order Form (WhatsApp) + Highlight selected product ----------
+(function initQuickOrder() {
+  const form = document.getElementById('quickOrderForm');
+  if (!form) return;
+
+  const productSelect = document.getElementById('orderProduct');
+  const sizeFixed = '500g';
+  const qtyInput = document.getElementById('orderQty');
+  const infoName = document.getElementById('orderInfoName');
+  const infoPrice = document.getElementById('orderInfoPrice');
+  const infoIngredients = document.getElementById('orderInfoIngredients');
+  const infoImage = document.getElementById('orderInfoImage');
+  const infoSize = document.getElementById('orderInfoSize');
+
+  function highlightProduct(productId) {
+    document
+      .querySelectorAll('.product-card')
+      .forEach((c) => c.classList.remove('highlight'));
+    const card = document.querySelector(`[data-product="${productId}"]`);
+    if (card) {
+      card.classList.add('highlight');
+      // Ensure the category section is visible
+      const section = card.closest('.product-section');
+      if (section) {
+        document
+          .querySelectorAll('.product-section')
+          .forEach((s) => s.classList.remove('active'));
+        section.classList.add('active');
+        // Update category nav active state
+        const id = section.getAttribute('id');
+        document.querySelectorAll('.category-btn').forEach((btn) => {
+          btn.classList.toggle(
+            'active',
+            btn.getAttribute('data-category') === id
+          );
+        });
+      }
+      // Update preview image
+      const img = card.querySelector('.product-image img');
+      if (img) infoImage.src = img.src;
+    }
+  }
+
+  function updatePreview(productId) {
+    const data = productData[productId];
+    if (!data) return;
+    infoName.textContent = data.name;
+    infoPrice.textContent = data.price;
+    infoIngredients.innerHTML = '';
+    data.ingredients.forEach((ing) => {
+      const li = document.createElement('li');
+      li.textContent = ing;
+      infoIngredients.appendChild(li);
+    });
+    if (infoSize) infoSize.textContent = 'Size: 500g';
+    // Prefer explicit preview image from product data, fallback to card image
+    if (data.image) {
+      infoImage.src = data.image;
+    }
+    highlightProduct(productId);
+  }
+
+  // Initialize with current select value
+  if (productSelect && productSelect.value) {
+    updatePreview(productSelect.value);
+  }
+
+  productSelect.addEventListener('change', (e) => {
+    updatePreview(e.target.value);
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const productId = productSelect.value;
+    const size = sizeFixed;
+    const qty = qtyInput.value || 1;
+    const product = productData[productId];
+    if (!product) return;
+    const message = `Hi Nuts Pet Food! I'd like to order:\n\n• ${product.name} (${size})\n• Qty: ${qty}\n\nPlease confirm availability and delivery to South/Central Bali.`;
+    const wa = `https://wa.me/6287861808065?text=${encodeURIComponent(message)}`;
+    window.open(wa, '_blank');
+  });
+})();
