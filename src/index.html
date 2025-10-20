@@ -195,35 +195,45 @@
       </div>
     </header>
 
-    <!-- ================= OUR STORY ================= -->
-    <section id="about" class="story animate-on-scroll">
-      <div class="story-grid">
-        <div class="story-image">
-          <video
-            id="storyVideo"
-            src="images/nuts-video.mp4"
-            poster="images/nuts-logo.png"
-            muted
-            loop
-            playsinline
-            preload="metadata"
-          ></video>
+    <!-- ================= WHY CHOOSE NUTS ================= -->
+    <section id="about" class="why-choose animate-on-scroll">
+      <div class="why-choose-grid">
+        <div class="why-choose-image">
+          <img
+            src="images/WhatsApp Image 2025-10-18 at 13.32.54.jpeg"
+            alt="Dog and cat enjoying Nuts Pet Food from their bowls"
+            class="why-choose-img"
+          />
         </div>
-        <div class="story-content">
-          <h2>Our Family Story</h2>
+        <div class="why-choose-content">
+          <h2>Why You Should Choose<br />Nuts Pet Food</h2>
           <p>
-            We’re a small family kitchen in Bali, led by Avi, a lifelong dog
-            lover who cooks every batch by hand. Our recipes are inspired by
-            wholesome home cooking — the kind you’d feel good serving at your
-            own table — gently prepared for pets.
+            We believe your pets deserve real food, not processed mystery meat.
+            That's why every <strong>500-gram can</strong> is made fresh in our
+            Bali kitchen using only <strong>natural ingredients</strong> – no
+            artificial preservatives, no cheap fillers, no shortcuts.
           </p>
           <p>
-            We use fresh meat and seasonal vegetables from local markets. No
-            preservatives, no shortcuts. Just real food that nourishes and keeps
-            tails wagging.
+            When you open a can of Nuts Pet Food, you'll immediately notice the
+            difference. You can actually see the real chicken, fresh vegetables,
+            and quality proteins. It smells like real food because it
+            <em>is</em> real food – the kind of meal you'd feel good about
+            feeding your own family.
           </p>
-          <p class="signature">— Avi & Family</p>
-          <div class="story-ctas">
+          <p>
+            We're a small family business, and we treat every batch like we're
+            cooking for our own pets. That means
+            <strong>consistent quality</strong> in every can,
+            <strong>human-grade ingredients</strong> whenever possible, and the
+            peace of mind that comes from knowing exactly what your furry friend
+            is eating.
+          </p>
+          <p>
+            Whether you have a picky eater or a food-obsessed pup, our recipes
+            are designed to satisfy even the most discerning pet palates.
+            Because when your pet is happy and healthy, you are too.
+          </p>
+          <div class="why-choose-cta">
             <a href="#order" class="button button--primary">Explore the Menu</a>
           </div>
         </div>
@@ -231,10 +241,9 @@
     </section>
 
     <!-- ================= ABOUT ================= -->
-    <section class="animate-on-scroll">
+    <!-- <section class="animate-on-scroll">
       <div class="features-slideshow">
         <div class="slideshow-with-arrows">
-          <!-- Navigation arrows -->
           <button
             class="slide-arrow slide-arrow--prev"
             aria-label="Previous slide"
@@ -305,7 +314,6 @@
           ></button>
         </div>
 
-        <!-- Dots indicator -->
         <div class="slide-dots">
           <button
             class="dot active"
@@ -334,7 +342,7 @@
           ></button>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- ================= SOCIAL PROOF ================= -->
     <section class="social-proof animate-on-scroll">
@@ -366,78 +374,84 @@
 
         <div class="order-card" aria-label="Quick order form">
           <form id="quickOrderForm" class="order-form" novalidate>
-            <div>
-              <label for="orderProduct">Recipe</label>
-              <div class="fancy-select">
-                <select id="orderProduct" required>
-                  <optgroup label="Raw Dog Food">
-                    <option value="raw-chicken-tuna">
-                      Raw Chicken with Tuna
-                    </option>
-                    <option value="raw-chicken-gizzard">
-                      Raw Chicken with Gizzard
-                    </option>
-                    <option value="raw-chicken-liver">
-                      Raw Chicken with Liver
-                    </option>
-                  </optgroup>
-                  <optgroup label="Cooked Dog Food">
-                    <option value="cooked-chicken-tuna">
-                      Cooked Chicken with Tuna
-                    </option>
-                    <option value="cooked-chicken-gizzard">
-                      Cooked Chicken with Gizzard
-                    </option>
-                    <option value="cooked-chicken-liver">
-                      Cooked Chicken with Liver
-                    </option>
-                  </optgroup>
-                  <optgroup label="Cat Food">
-                    <option value="cat-chicken-tuna">Chicken with Tuna</option>
-                    <option value="cat-chicken-gizzard">
-                      Chicken with Gizzard
-                    </option>
-                    <option value="cat-chicken-liver">
-                      Chicken with Liver
-                    </option>
-                    <option value="cat-mackerel-liver">
-                      Mackerel with Chicken Liver
-                    </option>
-                    <option value="cat-ocean-mackerel">
-                      Ocean Fish with Mackerel
-                    </option>
-                    <option value="cat-sardine-gizzard">
-                      Sardine with Chicken Gizzard
-                    </option>
-                  </optgroup>
-                  <optgroup label="Puppy Food">
-                    <option value="puppy-chicken-tuna">
-                      Chicken with Tuna
-                    </option>
-                    <option value="puppy-chicken-gizzard">
-                      Chicken with Gizzard
-                    </option>
-                    <option value="puppy-chicken-liver">
-                      Chicken with Liver
-                    </option>
-                  </optgroup>
-                </select>
+            <div class="order-form-controls">
+              <div>
+                <label for="orderProduct">Recipe</label>
+                <div class="fancy-select">
+                  <select id="orderProduct" required>
+                    <optgroup label="Raw Dog Food">
+                      <option value="raw-chicken-tuna">
+                        Raw Chicken with Tuna
+                      </option>
+                      <option value="raw-chicken-gizzard">
+                        Raw Chicken with Gizzard
+                      </option>
+                      <option value="raw-chicken-liver">
+                        Raw Chicken with Liver
+                      </option>
+                    </optgroup>
+                    <optgroup label="Cooked Dog Food">
+                      <option value="cooked-chicken-tuna">
+                        Cooked Chicken with Tuna
+                      </option>
+                      <option value="cooked-chicken-gizzard">
+                        Cooked Chicken with Gizzard
+                      </option>
+                      <option value="cooked-chicken-liver">
+                        Cooked Chicken with Liver
+                      </option>
+                    </optgroup>
+                    <optgroup label="Cat Food">
+                      <option value="cat-chicken-tuna">
+                        Chicken with Tuna
+                      </option>
+                      <option value="cat-chicken-gizzard">
+                        Chicken with Gizzard
+                      </option>
+                      <option value="cat-chicken-liver">
+                        Chicken with Liver
+                      </option>
+                      <option value="cat-mackerel-liver">
+                        Mackerel with Chicken Liver
+                      </option>
+                      <option value="cat-ocean-mackerel">
+                        Ocean Fish with Mackerel
+                      </option>
+                      <option value="cat-sardine-gizzard">
+                        Sardine with Chicken Gizzard
+                      </option>
+                    </optgroup>
+                    <optgroup label="Puppy Food">
+                      <option value="puppy-chicken-tuna">
+                        Chicken with Tuna
+                      </option>
+                      <option value="puppy-chicken-gizzard">
+                        Chicken with Gizzard
+                      </option>
+                      <option value="puppy-chicken-liver">
+                        Chicken with Liver
+                      </option>
+                    </optgroup>
+                  </select>
+                </div>
               </div>
-              <small class="order-hint"
-                >Selecting a recipe highlights it in the menu and shows details
-                below.</small
-              >
+
+              <div>
+                <label for="orderQty">Qty</label>
+                <input id="orderQty" type="number" min="1" value="2" required />
+              </div>
+
+              <div class="order-submit-wrap">
+                <button class="button button--primary" type="submit">
+                  WhatsApp My Order
+                </button>
+              </div>
             </div>
 
-            <div>
-              <label for="orderQty">Qty</label>
-              <input id="orderQty" type="number" min="1" value="2" required />
-            </div>
-            <div class="order-submit-wrap">
-              <button class="button button--primary" type="submit">
-                WhatsApp My Order
-              </button>
-            </div>
+            <small class="order-hint"
+              >Selecting a recipe highlights it in the menu and shows details
+              below.</small
+            >
           </form>
 
           <div

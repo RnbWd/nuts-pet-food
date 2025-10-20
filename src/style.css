@@ -581,6 +581,19 @@ section {
   align-items: end;
 }
 
+.order-form-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* vertical spacing between controls on mobile */
+  width: 100%;
+  max-width: 400px; /* reasonable max-width for mobile */
+  margin: 0 auto; /* center horizontally */
+}
+
+.order-form-controls > div {
+  width: 100%;
+}
+
 .order-form label {
   font-size: 12px;
   font-weight: 700;
@@ -597,7 +610,13 @@ section {
 }
 
 .order-submit-wrap {
-  align-self: end;
+  align-self: center; /* center on mobile */
+  width: 100%;
+}
+
+.order-submit-wrap .button {
+  width: 100%;
+  max-width: 100%; /* full width of container on mobile */
 }
 
 .order-hint {
@@ -1280,6 +1299,57 @@ section h2::after {
   margin-right: auto;
 }
 
+/* ---------- Why Choose Section ---------- */
+.why-choose {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.why-choose-image {
+  order: 1;
+}
+
+.why-choose-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: block;
+}
+
+.why-choose-content {
+  order: 2;
+  padding: 2rem;
+}
+
+.why-choose-content h2 {
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.why-choose-content p {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.why-choose-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 /* ---------- Our Story Section ---------- */
 .story {
   background: var(--white);
@@ -1711,6 +1781,20 @@ footer a:hover {
          TABLET STYLES (MIN-WIDTH: 768px)
          ======================================== */
 @media (min-width: 768px) {
+  .why-choose-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .why-choose-image {
+    order: 2;
+  }
+
+  .why-choose-content {
+    order: 1;
+    padding: 3rem 2rem;
+  }
+
   .story-grid {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
@@ -1740,6 +1824,14 @@ footer a:hover {
          DESKTOP STYLES (MIN-WIDTH: 1024px)
          ======================================== */
 @media (min-width: 1024px) {
+  .why-choose-grid {
+    gap: 3rem;
+  }
+
+  .why-choose-content {
+    padding: 3rem;
+  }
+
   .story-grid {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
@@ -1756,6 +1848,68 @@ footer a:hover {
   .slideshow-container {
     max-width: 500px;
     height: 320px;
+  }
+  /* Order form alignment for large screens */
+  .order-form-controls {
+    display: flex;
+    flex-direction: row; /* override mobile column layout */
+    align-items: center; /* vertically center all controls */
+    justify-content: flex-start;
+    gap: 16px;
+    flex-wrap: nowrap;
+    max-width: none; /* remove mobile max-width constraint */
+    margin: 0; /* remove mobile centering */
+  }
+
+  .order-form-controls > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .order-form-controls .fancy-select {
+    flex: 2.2; /* recipe select takes more space */
+    min-width: 250px; /* ensure recipe box is always wide enough */
+  }
+
+  .order-form-controls > div:has(#orderQty) {
+    flex: 0.8; /* qty input smaller */
+    min-width: 80px; /* ensure qty box is always wide enough */
+  }
+
+  #orderQty {
+    min-width: 80px; /* ensure input itself has minimum width */
+  }
+
+  .order-form-controls .order-submit-wrap {
+    flex: 0 0 auto; /* button takes natural width */
+    align-self: flex-end; /* align to bottom with other controls */
+  }
+
+  .order-form input,
+  .order-form select,
+  .fancy-select select {
+    height: 56px; /* unify control height */
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  /* Make qty input visually match the fancy select */
+  .order-form input {
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+    font-weight: 700;
+  }
+
+  .order-submit-wrap .button {
+    height: 56px; /* exact match */
+    padding: 0 2rem; /* horizontal padding only */
+    width: auto;
+    min-width: 200px;
+    display: flex;
+    align-items: center; /* vertically center text */
+    justify-content: center;
   }
 }
 /* Large desktop overrides removed to keep styles simple and consistent */

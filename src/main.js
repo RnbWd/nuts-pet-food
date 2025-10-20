@@ -349,7 +349,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Features slideshow functionality
-let currentSlide = 0;
+/* let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
 const totalSlides = slides.length;
@@ -513,7 +513,7 @@ slideshowContainer.addEventListener('contextmenu', (e) => {
 });
 
 // Start the slideshow
-startAutoSlide();
+startAutoSlide(); */
 
 // Photo Gallery Filtering Functionality
 const galleryFilterBtns = document.querySelectorAll('.filter-btn');
