@@ -619,12 +619,6 @@ section {
   max-width: 100%; /* full width of container on mobile */
 }
 
-.order-hint {
-  display: block;
-  margin-top: 6px;
-  color: var(--muted);
-}
-
 /* Creative select styling */
 .fancy-select {
   position: relative;
@@ -1803,9 +1797,6 @@ footer a:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
-  .order-form {
-    grid-template-columns: 2fr 1fr 0.6fr auto;
-  }
   .contact-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -1817,6 +1808,74 @@ footer a:hover {
   .slideshow-container {
     max-width: 440px;
     height: 300px;
+  }
+
+  /* Order form horizontal layout for tablet and up */
+  .order-form-controls {
+    display: flex;
+    flex-direction: row; /* override mobile column layout */
+    align-items: center; /* vertically center all controls */
+    justify-content: flex-start;
+    gap: 16px;
+    flex-wrap: nowrap;
+    max-width: none; /* remove mobile max-width constraint */
+    margin: 0; /* remove mobile centering */
+  }
+
+  .order-form-controls > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .order-form-controls .fancy-select {
+    flex: 2; /* recipe select takes more space */
+    min-width: 220px; /* ensure recipe box is always wide enough */
+  }
+
+  .order-form-controls > div:has(#orderQty) {
+    flex: 0 0 auto; /* qty input fixed width */
+    min-width: 90px; /* ensure qty box is always wide enough */
+    width: 90px;
+  }
+
+  #orderQty {
+    min-width: 90px; /* ensure input itself has minimum width */
+    width: 100%;
+  }
+
+  .order-form-controls .order-submit-wrap {
+    flex: 0 0 auto; /* button takes natural width, doesn't grow */
+    align-self: flex-end; /* align to bottom with other controls */
+    width: auto; /* override mobile 100% width */
+  }
+
+  .order-form input,
+  .order-form select,
+  .fancy-select select {
+    height: 56px; /* unify control height */
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  /* Make qty input visually match the fancy select */
+  .order-form input {
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+    font-weight: 700;
+  }
+
+  .order-submit-wrap .button {
+    height: 56px; /* exact match */
+    padding: 0 1.5rem; /* horizontal padding only */
+    width: auto;
+    max-width: 100%; /* don't overflow container */
+    white-space: nowrap;
+    display: flex;
+    align-items: center; /* vertically center text */
+    justify-content: center;
+    font-size: 0.85rem; /* slightly smaller text for better fit */
   }
 }
 
@@ -1848,68 +1907,6 @@ footer a:hover {
   .slideshow-container {
     max-width: 500px;
     height: 320px;
-  }
-  /* Order form alignment for large screens */
-  .order-form-controls {
-    display: flex;
-    flex-direction: row; /* override mobile column layout */
-    align-items: center; /* vertically center all controls */
-    justify-content: flex-start;
-    gap: 16px;
-    flex-wrap: nowrap;
-    max-width: none; /* remove mobile max-width constraint */
-    margin: 0; /* remove mobile centering */
-  }
-
-  .order-form-controls > div {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .order-form-controls .fancy-select {
-    flex: 2.2; /* recipe select takes more space */
-    min-width: 250px; /* ensure recipe box is always wide enough */
-  }
-
-  .order-form-controls > div:has(#orderQty) {
-    flex: 0.8; /* qty input smaller */
-    min-width: 80px; /* ensure qty box is always wide enough */
-  }
-
-  #orderQty {
-    min-width: 80px; /* ensure input itself has minimum width */
-  }
-
-  .order-form-controls .order-submit-wrap {
-    flex: 0 0 auto; /* button takes natural width */
-    align-self: flex-end; /* align to bottom with other controls */
-  }
-
-  .order-form input,
-  .order-form select,
-  .fancy-select select {
-    height: 56px; /* unify control height */
-    padding: 12px;
-    box-sizing: border-box;
-  }
-
-  /* Make qty input visually match the fancy select */
-  .order-form input {
-    border: 2px solid var(--border);
-    border-radius: 14px;
-    background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
-    font-weight: 700;
-  }
-
-  .order-submit-wrap .button {
-    height: 56px; /* exact match */
-    padding: 0 2rem; /* horizontal padding only */
-    width: auto;
-    min-width: 200px;
-    display: flex;
-    align-items: center; /* vertically center text */
-    justify-content: center;
   }
 }
 /* Large desktop overrides removed to keep styles simple and consistent */
