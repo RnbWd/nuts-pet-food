@@ -648,8 +648,8 @@ section {
 
 /* Selected product info preview */
 .order-product-info {
-  display: grid;
-  grid-template-columns: 100px 1fr;
+  display: flex;
+  /* grid-template-columns: 100px 1fr; */
   gap: 14px;
   align-items: center;
   margin-top: 16px;
@@ -1856,6 +1856,9 @@ footer a:hover {
     height: 56px; /* unify control height */
     padding: 12px;
     box-sizing: border-box;
+  }
+  .order-product-info {
+    padding-left: 80;
   }
 
   /* Make qty input visually match the fancy select */
