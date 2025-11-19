@@ -37,12 +37,10 @@
 
   /* Gradients */
   --gradient: linear-gradient(
-    135deg,
-    #fef3c7 0%,
-    #fed7aa 25%,
-    #fdba74 45%,
-    #fb923c 75%,
-    #f87171 100%
+    180deg,
+    #fffbf0 0%,
+    #fff7ed 40%,
+    #ffedd5 100%
   );
   --gradient-soft: radial-gradient(
     120% 120% at 20% 10%,
@@ -1738,7 +1736,7 @@ footer .footer-contact {
 footer {
   text-align: center;
   padding: 3rem 1rem;
-  background: linear-gradient(180deg, #fbbf24, #f97316 45%, #dc2626 100%);
+  background: linear-gradient(180deg, #78350f, #451a03);
   color: var(--white);
   font-size: 0.9rem;
   margin-top: 3rem;
