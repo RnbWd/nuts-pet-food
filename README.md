@@ -1,89 +1,96 @@
 # Nuts Pet Food Website
 
-This repository contains the marketing site for Nuts Pet Food. It is built with [Vite](https://vitejs.dev/) and vanilla JavaScript.
+Marketing and ordering site for Nuts Pet Food, a local Bali pet food supplier making canned dog and cat food from locally sourced, organic ingredients. The site is intentionally simple: explain the food, show the brand, and move customers to WhatsApp ordering quickly.
 
-## Quick start
+The site is built with [Vite](https://vite.dev/) and vanilla HTML, CSS, and JavaScript. It is hosted on GitHub Pages at `nutspetfood.com`.
 
-1. Install Node.js 18 or later from [nodejs.org](https://nodejs.org/).
-2. Install the project dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-4. Open the printed URL (usually `http://localhost:5173`) in your browser to preview changes in real time.
+## Current Site Shape
 
-## Editing the site
+- Single-page public website served from `src/index.html`.
+- Static assets, icons, favicons, and metadata files live under `src/images/`, `src/fonts/`, and `src/public/`.
+- Styling is centralized in `src/style.css`.
+- Lightweight behavior lives in `src/main.js`: smooth scrolling, scroll animation, nav state, product preview updates, and WhatsApp order message creation.
+- GitHub Pages deploys the Vite production build from `dist/` using `.github/workflows/static.yml`.
 
-If you're comfortable editing HTML, CSS, and JavaScript directly, the key files live in the [`src/`](src) folder:
+## Quick Start
 
-- [`src/index.html`](src/index.html) – page structure and text.
-- [`src/style.css`](src/style.css) – colors, fonts, and layout.
-- [`src/main.js`](src/main.js) – light JavaScript that wires the page together.
+Use Node.js 20 LTS or newer. The GitHub Pages workflow uses `node-version: lts/*`, and Vite 7 expects a modern Node runtime.
 
-For a step-by-step walkthrough aimed at new contributors with little to no coding experience, read the [Beginner Editing Guide](docs/beginner-guide.md).
+```bash
+npm install
+npm run dev
+```
 
-## Deploying
+Open the printed local URL, usually `http://localhost:5173/`.
 
-The site automatically builds and publishes to GitHub Pages whenever you push changes to the `main` branch. You don't need to run any build commands—just follow the Git workflow below to publish your changes.
+Before proposing or merging a change, run:
 
-### Using Git in Cursor IDE (Recommended for Beginners)
+```bash
+npm run build
+```
 
-Cursor has a built-in interface that makes working with Git easier:
+To preview the production build locally:
 
-1. **Pull the latest changes** (always do this first to get any updates):
-   - Click the Source Control icon in the left sidebar (it looks like a branching diagram).
-   - Click the `...` menu at the top of the Source Control panel.
-   - Select **Pull** from the dropdown menu.
+```bash
+npm run preview
+```
 
-2. **Make your edits** to any files in the `src/` folder.
+## Important Files
 
-3. **Stage your changes**:
-   - Open the Source Control panel (same icon as step 1).
-   - You'll see a list of files you've changed.
-   - Hover over each file and click the `+` icon to stage it (or click the `+` next to "Changes" to stage all files at once).
+- `src/index.html` - page structure, copy, SEO metadata, WhatsApp links, and form options.
+- `src/style.css` - visual system, responsive layout, components, and section styles.
+- `src/main.js` - interactive behavior and product data used by the quick order form.
+- `src/images/` - product, logo, pet, sticker, and background assets.
+- `src/fonts/` - local display font assets used by the brand.
+- `src/public/` - files copied to the site root, including favicon assets, `robots.txt`, `sitemap.xml`, and `site.webmanifest`.
+- `vite.config.mjs` - Vite config. The project root is `src`, and builds are written to top-level `dist`.
+- `.github/workflows/static.yml` - GitHub Pages deployment workflow.
+- `docs/beginner-guide.md` - non-technical editing guide.
+- `docs/site-structure.md` - page, asset, build, and deployment architecture.
+- `docs/brand-and-theme.md` - brand voice, visual direction, and design rules for contributors.
+- `docs/improvement-notes.md` - current assessment and recommended structure/design/code improvements.
+- `AGENTS.md` - operating instructions for AI coding agents.
 
-4. **Commit your changes**:
-   - Type a brief message in the text box at the top describing what you changed (e.g., "Updated homepage text" or "Changed logo size").
-   - Click the checkmark button (✓) or press `Cmd+Enter` to commit.
+## Brand Direction
 
-5. **Push to GitHub**:
-   - Click the `...` menu again.
-   - Select **Push** to upload your changes.
-   - Your site will automatically update in a few minutes!
+Nuts should feel local, trustworthy, handmade, and warm. The customer should understand within a few seconds:
 
-### Using Git from the Command Line (Alternative)
+- Nuts makes canned pet food in Bali.
+- The food uses real, locally sourced, organic ingredients.
+- There are no preservatives, fillers, or artificial shortcuts.
+- Ordering happens mainly through WhatsApp.
 
-If you prefer typing commands, open the terminal in Cursor (`Terminal` → `New Terminal`) and run:
+Keep the tone authentic and direct. Avoid generic luxury pet brand language, vague wellness claims, or overproduced copy that makes the business feel less personal.
 
-1. **Pull the latest changes:**
+## Editing Guidance
 
-   ```bash
-   git pull
-   ```
+For small copy changes, edit `src/index.html`.
 
-2. **Make your edits** to files, then stage them:
+For design changes, start with the CSS variables at the top of `src/style.css`, then adjust the section-specific styles lower in the file. Do not scatter one-off colors and spacing values unless the exception is deliberate.
 
-   ```bash
-   git add .
-   ```
+For product or ordering changes, update both:
 
-   This stages all changed files. To stage a specific file, replace `.` with the file path (e.g., `git add src/index.html`).
+- the `<select id="orderProduct">` options in `src/index.html`
+- the matching `productData` entries in `src/main.js`
 
-3. **Commit your changes:**
+Those two sources currently need to stay in sync. A future improvement should generate the form options from one product data source.
 
-   ```bash
-   git commit -m "Your message describing the changes"
-   ```
+## Deployment
 
-4. **Push to GitHub:**
-   ```bash
-   git push
-   ```
+Pushing to `main` triggers `.github/workflows/static.yml`:
 
-After pushing, GitHub Pages will automatically rebuild and deploy your site within a few minutes.
+1. install dependencies with `npm ci`
+2. run `npm run build`
+3. upload `dist/`
+4. publish to GitHub Pages
+
+The custom domain is configured through `CNAME`.
+
+## Is Vite The Right Choice?
+
+Yes, Vite is reasonable for this site right now. The site is static, asset-heavy, and simple enough that a full framework would add more complexity than value. Vite gives fast local preview, asset handling, production minification, and a clean GitHub Pages build.
+
+The bigger issue is not Vite. The site would benefit more from cleaning up content structure, consolidating product data, pruning unused code, and documenting design constraints than from changing frameworks.
 
 ## License
 

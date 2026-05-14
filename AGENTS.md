@@ -1,0 +1,88 @@
+# AGENTS.md
+
+Instructions for AI coding agents working on the Nuts Pet Food website.
+
+## Project Summary
+
+This is the GitHub Pages website for Nuts Pet Food, a Bali-based supplier of canned food for dogs and cats. The business position is simple and specific: locally made canned pet food, locally sourced organic ingredients, no preservatives or fillers, and WhatsApp-first ordering.
+
+The implementation is a Vite static site with vanilla HTML, CSS, and JavaScript. Do not introduce a larger framework unless the user explicitly asks for it and the tradeoff is documented.
+
+## Commands
+
+```bash
+npm install
+npm run dev
+npm run build
+npm run preview
+npm run format
+```
+
+Run `npm run build` before handing off code changes. For markdown-only changes, build is optional but still useful when documentation references project commands or deployment behavior.
+
+## Architecture
+
+- `src/index.html` is the only public page.
+- `src/style.css` contains the full visual system and responsive styles.
+- `src/main.js` contains all client-side behavior.
+- `src/public/` is copied to the web root by Vite because `root` is set to `src`.
+- `dist/` is generated and ignored by git.
+- `.github/workflows/static.yml` deploys `dist/` to GitHub Pages on pushes to `main`.
+
+See `docs/site-structure.md` for a more detailed map.
+
+## Brand And Product Rules
+
+Preserve these facts unless the user says they changed:
+
+- Business name: Nuts Pet Food.
+- Location: Bali, Indonesia.
+- Product: canned pet food for dogs and cats.
+- Ingredients: locally sourced, organic, natural ingredients.
+- Ordering channel: WhatsApp is primary.
+- Brand feel: simple, authentic, warm, handmade, local, beautiful.
+
+Avoid making the site feel like a generic SaaS landing page or a clinical veterinary product. Keep the tone human and concrete.
+
+See `docs/brand-and-theme.md` before changing layout, copy, colors, typography, imagery, or calls to action.
+
+## Editing Rules
+
+- Keep the first screen focused on brand, product, Bali, and ordering.
+- Keep WhatsApp ordering easy to find in the nav, hero, order section, and contact section.
+- Prefer direct content edits over abstract component work.
+- Keep dependencies minimal.
+- Do not add React, routing, CMS tooling, Tailwind usage, or analytics by default.
+- Maintain accessibility basics: meaningful alt text, visible focus styles, semantic headings, and keyboard-safe interactions.
+- Keep mobile behavior first. Many customers will arrive from Instagram, WhatsApp, or mobile search.
+
+## Product Data Warning
+
+Product options are duplicated today:
+
+- visible options in `src/index.html`
+- product metadata in `src/main.js`
+
+When changing recipes, prices, images, or names, update both places and verify the quick order preview and WhatsApp message still match. A good future refactor is to define products once in JavaScript and render the `<select>` options from that data.
+
+## Known Codebase Issues
+
+- `src/style.css` is large and includes styles for removed or inactive sections.
+- `src/main.js` includes behavior for product cards, gallery, slideshow, story video, and modal UI that is mostly unused by the current page.
+- `src/index.html` contains commented-out feature sections and a root-level product modal that is not connected to the visible quick order flow.
+- Product names, ingredients, and WhatsApp copy should be treated as customer-facing business content, not placeholder code.
+
+See `docs/improvement-notes.md` for prioritized cleanup ideas.
+
+## Safe Change Pattern
+
+1. Read `README.md`, this file, and any relevant file under `docs/`.
+2. Inspect the actual HTML/CSS/JS before editing.
+3. Make the smallest coherent change.
+4. Run `npm run build`.
+5. If the change affects layout, preview on mobile and desktop widths.
+6. Summarize changed files and any remaining risk.
+
+## Design Judgment
+
+The current design direction is directionally right: warm, handmade, single-page, WhatsApp-first. The structure is also mostly right for a local supplier. The main risks are clutter, stale code, and duplication. Prefer refinement and cleanup over a redesign.
