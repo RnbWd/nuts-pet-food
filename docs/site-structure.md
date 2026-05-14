@@ -10,7 +10,7 @@ Production output is written to top-level `dist/`:
 
 ```js
 build: {
-  outDir: '../dist'
+  outDir: '../dist';
 }
 ```
 
@@ -24,17 +24,12 @@ GitHub Pages deployment is handled by `.github/workflows/static.yml`. It install
 - `#hero` - primary brand statement, logo, trust badges, order CTA.
 - `#about` - founder/product explanation and main proof points.
 - social proof section - founder quote.
+- menu preview section - product category proof cards generated from product data.
 - `#order` - delivery promise, quick order form, product preview, order steps.
 - `#contact` - WhatsApp, email, and Instagram contact options.
 - `footer` - copyright and direct owner WhatsApp.
 
-There are also inactive remnants:
-
-- commented slideshow/about section in `src/index.html`
-- commented floating WhatsApp CTA
-- root-level product modal that is not used by the visible quick order form
-
-Do not assume commented sections are production intent. Treat them as historical experiments unless the user explicitly asks to restore them.
+Removed historical slideshow, gallery, floating CTA, and product modal remnants should stay removed unless the business explicitly asks to bring them back.
 
 ## Styling
 
@@ -49,7 +44,7 @@ High-level organization:
 - navigation
 - hero and trust badges
 - sections and order form
-- inactive slideshow/product/modal/gallery styles
+- menu preview and order form
 - why-choose, social proof, contact, footer
 - responsive media queries
 
@@ -66,24 +61,22 @@ When changing colors, start at `:root`. When changing a section, search for the 
 
 ## JavaScript
 
+Product data lives in `src/data/products.js`.
+
+`src/order.js` provides pure helpers for:
+
+- quantity normalization
+- WhatsApp order messages
+- WhatsApp order URLs
+
 `src/main.js` provides:
 
 - smooth anchor scrolling
 - scroll-triggered animation classes
 - nav scrolled state
-- product data for order previews
+- menu preview rendering
 - quick order preview updates
 - WhatsApp order URL generation
-
-It also contains legacy or inactive behavior:
-
-- category navigation for absent `.category-btn` and `.product-section` elements
-- product modal behavior for absent `.product-card` elements
-- commented slideshow logic
-- gallery filtering/lightbox logic for absent gallery elements
-- story video autoplay for absent `#storyVideo`
-
-Guard clauses prevent most inactive code from breaking, but this file should be simplified when there is time.
 
 ## Assets
 
@@ -108,19 +101,8 @@ The visible order flow is intentionally low-friction:
 3. product preview updates
 4. submit opens WhatsApp with a prefilled message
 
-The WhatsApp number used by the main order flow is `+62 878-6180-8065`.
-
-The footer also includes an owner contact number: `+62 819-9937-6938`.
-
-Before changing either number, confirm which number should receive customer orders.
+The WhatsApp number used everywhere is `+62 878-6180-8065`.
 
 ## Data Duplication
 
-Product information currently appears in both `src/index.html` and `src/main.js`. This is the most important structural weakness.
-
-Until it is refactored, changes to recipe names or categories must update:
-
-- the `<option>` labels and values in `src/index.html`
-- the corresponding `productData` keys and display content in `src/main.js`
-
-If these drift, the form may show one product name but send another in WhatsApp.
+Product information is centralized in `src/data/products.js`. The order select and menu preview are rendered from that data so recipe names and WhatsApp messages cannot drift apart.

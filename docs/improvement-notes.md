@@ -8,13 +8,6 @@ The site is not structurally wrong. A Vite-powered static site is a good fit for
 
 The design direction is also not wrong. The warm palette, handmade tone, trust badges, and WhatsApp-first ordering match the business better than a slick corporate design would.
 
-The main problems are maintainability and focus:
-
-- product data is duplicated between HTML and JavaScript
-- there is unused code from removed sections
-- the CSS file is large and mixes active and inactive styles
-- the site could show the actual canned product and ordering path more clearly
-
 ## Keep Vite
 
 Keep Vite for now.
@@ -65,29 +58,21 @@ Do not split files only for neatness. Split when edits become risky because unre
 
 ## Highest-Value Code Improvements
 
-1. Create one product data source.
+1. Keep one product data source.
 
-   Move all recipe names, categories, prices, images, and ingredients into a single JavaScript data structure. Render the `<select>` options from that data so the order form cannot drift.
+   Product names, categories, prices, images, ingredients, and the WhatsApp number now live in `src/data/products.js`. Keep it that way.
 
-2. Remove inactive code.
+2. Keep the confirmed WhatsApp number consistent.
 
-   Delete or archive the commented slideshow, unused modal behavior, gallery/lightbox behavior, and unused CSS once the business confirms those sections are not coming back.
+   The confirmed ordering number is `+62 878-6180-8065`.
 
-3. Clarify WhatsApp numbers.
-
-   The main order flow uses `+62 878-6180-8065`, while the footer owner link uses `+62 819-9937-6938`. Confirm whether both should remain and document the purpose of each.
-
-4. Improve product credibility.
+3. Improve product credibility.
 
    Add a compact product/menu section with actual cans, recipe groups, and storage/delivery notes. The current order form is useful, but shoppers may want more confidence before opening WhatsApp.
 
-5. Update date-sensitive content.
+4. Keep basic quality checks.
 
-   The footer still says `2025`. Either update it for 2026 or render the year dynamically.
-
-6. Add basic quality checks.
-
-   Add a script for formatting markdown/CSS/HTML consistently and consider a simple link check or accessibility smoke test before deployment.
+   `npm test` checks product data, WhatsApp URL generation, and stale markup. `npm run build` verifies the Vite production build.
 
 ## Design Assessment
 

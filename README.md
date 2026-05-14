@@ -14,7 +14,7 @@ The site is built with [Vite](https://vite.dev/) and vanilla HTML, CSS, and Java
 
 ## Quick Start
 
-Use Node.js 20 LTS or newer. The GitHub Pages workflow uses `node-version: lts/*`, and Vite 7 expects a modern Node runtime.
+Use Node.js 24 or newer. The GitHub Pages workflow also builds with Node 24.
 
 ```bash
 npm install
@@ -26,6 +26,7 @@ Open the printed local URL, usually `http://localhost:5173/`.
 Before proposing or merging a change, run:
 
 ```bash
+npm test
 npm run build
 ```
 
@@ -37,9 +38,11 @@ npm run preview
 
 ## Important Files
 
-- `src/index.html` - page structure, copy, SEO metadata, WhatsApp links, and form options.
+- `src/index.html` - page structure, copy, SEO metadata, and WhatsApp links.
 - `src/style.css` - visual system, responsive layout, components, and section styles.
-- `src/main.js` - interactive behavior and product data used by the quick order form.
+- `src/main.js` - interactive behavior for scrolling, menu preview rendering, product preview updates, and the quick order form.
+- `src/data/products.js` - single product, category, price, size, and WhatsApp number source.
+- `src/order.js` - pure WhatsApp order message and URL helpers.
 - `src/images/` - product, logo, pet, sticker, and background assets.
 - `src/fonts/` - local display font assets used by the brand.
 - `src/public/` - files copied to the site root, including favicon assets, `robots.txt`, `sitemap.xml`, and `site.webmanifest`.
@@ -49,6 +52,7 @@ npm run preview
 - `docs/site-structure.md` - page, asset, build, and deployment architecture.
 - `docs/brand-and-theme.md` - brand voice, visual direction, and design rules for contributors.
 - `docs/improvement-notes.md` - current assessment and recommended structure/design/code improvements.
+- `test/product-order.test.js` - data and ordering tests using Node's built-in test runner.
 - `AGENTS.md` - operating instructions for AI coding agents.
 
 ## Brand Direction
@@ -68,12 +72,7 @@ For small copy changes, edit `src/index.html`.
 
 For design changes, start with the CSS variables at the top of `src/style.css`, then adjust the section-specific styles lower in the file. Do not scatter one-off colors and spacing values unless the exception is deliberate.
 
-For product or ordering changes, update both:
-
-- the `<select id="orderProduct">` options in `src/index.html`
-- the matching `productData` entries in `src/main.js`
-
-Those two sources currently need to stay in sync. A future improvement should generate the form options from one product data source.
+For product or ordering changes, update `src/data/products.js`. The menu preview, order select, product preview, and WhatsApp message all use that single source.
 
 ## Deployment
 

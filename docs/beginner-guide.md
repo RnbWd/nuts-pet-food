@@ -15,7 +15,7 @@ Welcome! This guide walks through the basics of updating the Nuts Pet Food websi
    - Click the green **Code** button on GitHub and choose **Download ZIP**.
    - Unzip the folder somewhere easy to find (for example, your Desktop).
 
-> 💡 *Tip:* Whenever you see text formatted like `this`, it means you should type the command exactly as shown.
+> 💡 _Tip:_ Whenever you see text formatted like `this`, it means you should type the command exactly as shown.
 
 ---
 
@@ -37,9 +37,11 @@ We only have to do this the first time on a computer.
 1. In VS Code choose **Terminal → New Terminal**.
 2. A panel will open at the bottom. Make sure it shows the project folder path (ending in `nuts-pet-food`).
 3. Run the install command:
+
    ```bash
    npm install
    ```
+
    - The first run can take a few minutes. Wait until the command finishes and you see a new prompt (usually starting with `>` or the folder name).
 
 ---

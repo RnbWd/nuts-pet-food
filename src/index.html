@@ -36,59 +36,34 @@
     <meta property="og:site_name" content="Nuts Pet Food" />
     <meta property="og:locale" content="en_ID" />
     <link rel="canonical" href="https://nutspetfood.com/" />
-    <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css" />
-    <!-- <script type="application/ld+json">
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Nuts Pet Food",
-        "image": "https://nutspetfood.com/images/logo-one.png",
+        "image": "https://nutspetfood.com/android-chrome-512x512.png",
         "@id": "https://nutspetfood.com/",
         "url": "https://nutspetfood.com/",
-        "telephone": "+62-XXX-XXXX-XXXX" /* Add your phone number */,
-        "description": "Natural pet food in Bali for dogs and cats. No preservatives, locally sourced ingredients, and delivery across Bali.",
+        "telephone": "+62-878-6180-8065",
+        "description": "Natural canned pet food in Bali for dogs and cats. No preservatives, locally sourced ingredients, and WhatsApp ordering.",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Your Street Address",
-          "addressLocality": "Your City/Town",
           "addressRegion": "Bali",
-          "postalCode": "Your Postal Code",
           "addressCountry": "ID"
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -8.409518 /* Replace with your actual coordinates */,
-          "longitude": 115.188919
-        },
-        "priceRange": "$$" /* Optional: Indicate price range $, $$, $$$ */,
-        "openingHoursSpecification": [
-          /* Optional: Add your hours */
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
-            "opens": "09:00",
-            "closes": "17:00"
-          }
-        ]
+        "priceRange": "$$",
+        "areaServed": "South and Central Bali"
       }
-    </script> -->
+    </script>
   </head>
   <body>
     <a href="#about" class="skip-to-content">Skip to content</a>
 
-    <!-- Navigation moved to top -->
     <nav>
       <div class="nav-container">
         <a href="#hero" class="nav-logo">
@@ -101,7 +76,7 @@
         <div class="nav-menu">
           <ul>
             <li><a href="#about" class="nav-about">About</a></li>
-
+            <li><a href="#order">Menu</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="nav-cta">
               <a
@@ -115,19 +90,7 @@
         </div>
       </div>
     </nav>
-    <!-- Floating WhatsApp CTA -->
-    <!-- <a
-      href="https://wa.me/6287861808065?text=Hi%20Nuts%20Pet%20Food!%20I%E2%80%99d%20like%20to%20order%20fresh%20meals%20for%20my%20pet.%20Can%20you%20help%20me%20place%20an%20order%20today%3F"
-      class="whatsapp-fab"
-      aria-label="Order on WhatsApp"
-      target="_blank"
-      rel="noopener"
-      title="Order on WhatsApp"
-    >
-      📱 Order on WhatsApp
-    </a> -->
 
-    <!-- Hero section with full background -->
     <header id="hero" class="hero">
       <div
         class="trust-badges trust-badges--top"
@@ -143,10 +106,13 @@
           <span>No Preservatives</span>
         </div>
         <div class="trust-badge">
-          <span class="trust-badge-emoji" role="img" aria-label="No add-ons"
-            >🚫</span
+          <span
+            class="trust-badge-emoji"
+            role="img"
+            aria-label="Local ingredients"
+            >🌿</span
           >
-          <span>No Add‑ons</span>
+          <span>Local Ingredients</span>
         </div>
         <div class="trust-badge">
           <span class="trust-badge-emoji" role="img" aria-label="No fillers"
@@ -164,7 +130,7 @@
 
         <h1 class="hero-title">Natural Pet Food, Handmade in Bali</h1>
         <p class="hero-subtitle">
-          One‑tap ordering on WhatsApp. Fresh, human‑grade meals — cooked by our
+          One-tap ordering on WhatsApp. Fresh, human-grade meals cooked by our
           family in Bali and delivered across South & Central Bali.
         </p>
         <div class="hero-cta">
@@ -195,7 +161,6 @@
       </div>
     </header>
 
-    <!-- ================= WHY CHOOSE NUTS ================= -->
     <section id="about" class="why-choose animate-on-scroll">
       <div class="why-choose-grid">
         <div class="why-choose-image">
@@ -240,119 +205,22 @@
       </div>
     </section>
 
-    <!-- ================= ABOUT ================= -->
-    <!-- <section class="animate-on-scroll">
-      <div class="features-slideshow">
-        <div class="slideshow-with-arrows">
-          <button
-            class="slide-arrow slide-arrow--prev"
-            aria-label="Previous slide"
-          ></button>
+    <section class="menu-preview-section animate-on-scroll">
+      <div class="section-kicker">Small batch menu</div>
+      <h2>Real Food in 500g Cans</h2>
+      <p class="menu-preview-intro">
+        Choose from dog, cat, and puppy recipes made with chicken, fish,
+        vegetables, rice, seaweed, and other simple ingredients sourced around
+        Bali whenever possible.
+      </p>
+      <div
+        id="menuPreview"
+        class="menu-preview-grid"
+        aria-label="Menu groups"
+      ></div>
+    </section>
 
-          <div class="slideshow-container">
-            <div class="slide active">
-              <div class="card">
-                <h3>
-                  <span role="img" aria-label="Can">🥫</span> 500g Per Can!
-                </h3>
-                <p>
-                  We're the ONLY company that fits 500g of real food into one
-                  can. More food, more love!
-                </p>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="card">
-                <h3>
-                  <span role="img" aria-label="Meat">🥩</span> Real Food Only
-                </h3>
-                <p>
-                  Fresh chicken, tuna, and veggies. So real, you could eat it
-                  too!
-                </p>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="card">
-                <h3>
-                  <span role="img" aria-label="No entry">🚫</span> No Nasties
-                </h3>
-                <p>
-                  No preservatives, no chemicals, no fake stuff. Just pure
-                  goodness.
-                </p>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="card">
-                <h3>
-                  <span role="img" aria-label="Palm tree">🌴</span> Bali Fresh
-                </h3>
-                <p>
-                  Local & organic ingredients from beautiful Bali. Made with
-                  island love!
-                </p>
-              </div>
-            </div>
-            <div class="slide">
-              <div class="card">
-                <h3>
-                  <span role="img" aria-label="Heart eyes">😍</span> Dogs Love
-                  It
-                </h3>
-                <p>
-                  Tail wags guaranteed! Watch your pup's excitement at meal
-                  time.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <button
-            class="slide-arrow slide-arrow--next"
-            aria-label="Next slide"
-          ></button>
-        </div>
-
-        <div class="slide-dots">
-          <button
-            class="dot active"
-            data-slide="0"
-            aria-label="Go to slide 1"
-          ></button>
-          <button
-            class="dot"
-            data-slide="1"
-            aria-label="Go to slide 2"
-          ></button>
-          <button
-            class="dot"
-            data-slide="2"
-            aria-label="Go to slide 3"
-          ></button>
-          <button
-            class="dot"
-            data-slide="3"
-            aria-label="Go to slide 4"
-          ></button>
-          <button
-            class="dot"
-            data-slide="4"
-            aria-label="Go to slide 5"
-          ></button>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- ================= SOCIAL PROOF ================= -->
     <section class="social-proof animate-on-scroll">
-      <!-- <div class="testimonial">
-        "My Golden Retriever Max has never been healthier! His coat is shinier,
-        he has more energy, and he actually gets excited at meal time. Nuts Dog
-        Food is worth every rupiah."
-      </div>
-      <div class="testimonial-author">— Sarah K., Ubud Dog Mom</div> -->
-
       <div class="testimonial testimonial--spaced">
         "I'm not good at talking, but I'm good at doing. Every batch is made
         with love, and the food is so natural that I can eat it myself. My dogs
@@ -361,15 +229,14 @@
       <div class="testimonial-author">— Avi, Founder & Head Chef</div>
     </section>
 
-    <!-- ================= PHOTO GALLERY (REMOVED) ================= -->
-
-    <!-- ================= ORDERING ================= -->
     <section id="order" class="animate-on-scroll">
       <div class="order-section">
+        <div class="section-kicker">Order on WhatsApp</div>
         <h2>Fresh Delivery Across Bali</h2>
         <p class="order-intro">
           We deliver fresh meals across
-          <strong>South & Central Bali</strong> Monday through Friday.
+          <strong>South & Central Bali</strong> Monday through Friday. Select a
+          recipe and quantity, then send the prefilled WhatsApp message.
         </p>
 
         <div class="order-card" aria-label="Quick order form">
@@ -378,61 +245,7 @@
               <div>
                 <label for="orderProduct">Recipe</label>
                 <div class="fancy-select">
-                  <select id="orderProduct" required>
-                    <optgroup label="Raw Dog Food">
-                      <option value="raw-chicken-tuna">
-                        Raw Chicken with Tuna
-                      </option>
-                      <option value="raw-chicken-gizzard">
-                        Raw Chicken with Gizzard
-                      </option>
-                      <option value="raw-chicken-liver">
-                        Raw Chicken with Liver
-                      </option>
-                    </optgroup>
-                    <optgroup label="Cooked Dog Food">
-                      <option value="cooked-chicken-tuna">
-                        Cooked Chicken with Tuna
-                      </option>
-                      <option value="cooked-chicken-gizzard">
-                        Cooked Chicken with Gizzard
-                      </option>
-                      <option value="cooked-chicken-liver">
-                        Cooked Chicken with Liver
-                      </option>
-                    </optgroup>
-                    <optgroup label="Cat Food">
-                      <option value="cat-chicken-tuna">
-                        Chicken with Tuna
-                      </option>
-                      <option value="cat-chicken-gizzard">
-                        Chicken with Gizzard
-                      </option>
-                      <option value="cat-chicken-liver">
-                        Chicken with Liver
-                      </option>
-                      <option value="cat-mackerel-liver">
-                        Mackerel with Chicken Liver
-                      </option>
-                      <option value="cat-ocean-mackerel">
-                        Ocean Fish with Mackerel
-                      </option>
-                      <option value="cat-sardine-gizzard">
-                        Sardine with Chicken Gizzard
-                      </option>
-                    </optgroup>
-                    <optgroup label="Puppy Food">
-                      <option value="puppy-chicken-tuna">
-                        Chicken with Tuna
-                      </option>
-                      <option value="puppy-chicken-gizzard">
-                        Chicken with Gizzard
-                      </option>
-                      <option value="puppy-chicken-liver">
-                        Chicken with Liver
-                      </option>
-                    </optgroup>
-                  </select>
+                  <select id="orderProduct" required></select>
                 </div>
               </div>
 
@@ -462,6 +275,7 @@
               />
             </div>
             <div class="opi-details">
+              <p class="opi-category" id="orderInfoCategory"></p>
               <h3 id="orderInfoName">Select a recipe to see details</h3>
               <p class="opi-price" id="orderInfoPrice"></p>
               <p class="opi-size" id="orderInfoSize">Size: 500g</p>
@@ -539,45 +353,14 @@
 
     <footer>
       <p>
-        &copy; 2025 Nuts Pet Food – Crafted with love & sea breeze in Bali
+        &copy; 2026 Nuts Pet Food – Crafted with love & sea breeze in Bali
         <span role="img" aria-label="Palm tree">🌴</span>
       </p>
       <p class="footer-contact">
-        Questions? WhatsApp the owner directly:
-        <a href="https://wa.me/6281999376938">+62 819-9937-6938</a>
+        Questions or orders:
+        <a href="https://wa.me/6287861808065">+62 878-6180-8065</a>
       </p>
     </footer>
-
-    <!-- Product Details Modal - Placed at root level -->
-    <div class="modal" id="productModal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="modal-product-info">
-          <div class="modal-image">
-            <img id="modal-product-image" src="" alt="" />
-          </div>
-          <div class="modal-details">
-            <h3 id="modal-product-name"></h3>
-            <p class="modal-price" id="modal-product-price"></p>
-            <div class="modal-ingredients">
-              <h4>Ingredients:</h4>
-              <ul id="modal-ingredients-list"></ul>
-            </div>
-            <div class="modal-actions">
-              <a
-                href="https://wa.me/6287861808065"
-                id="modal-order-link"
-                class="button button--primary"
-                target="_blank"
-              >
-                <span role="img" aria-label="WhatsApp">📱</span> Order via
-                WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <script type="module" src="main.js"></script>
   </body>
 </html>

@@ -13,18 +13,21 @@ The implementation is a Vite static site with vanilla HTML, CSS, and JavaScript.
 ```bash
 npm install
 npm run dev
+npm test
 npm run build
 npm run preview
 npm run format
 ```
 
-Run `npm run build` before handing off code changes. For markdown-only changes, build is optional but still useful when documentation references project commands or deployment behavior.
+Run `npm test` and `npm run build` before handing off code changes. For markdown-only changes, build is optional but still useful when documentation references project commands or deployment behavior.
 
 ## Architecture
 
 - `src/index.html` is the only public page.
 - `src/style.css` contains the full visual system and responsive styles.
-- `src/main.js` contains all client-side behavior.
+- `src/main.js` contains DOM behavior.
+- `src/data/products.js` is the single product/category/contact source.
+- `src/order.js` contains pure WhatsApp order helpers.
 - `src/public/` is copied to the web root by Vite because `root` is set to `src`.
 - `dist/` is generated and ignored by git.
 - `.github/workflows/static.yml` deploys `dist/` to GitHub Pages on pushes to `main`.
@@ -56,20 +59,13 @@ See `docs/brand-and-theme.md` before changing layout, copy, colors, typography, 
 - Maintain accessibility basics: meaningful alt text, visible focus styles, semantic headings, and keyboard-safe interactions.
 - Keep mobile behavior first. Many customers will arrive from Instagram, WhatsApp, or mobile search.
 
-## Product Data Warning
+## Product Data
 
-Product options are duplicated today:
-
-- visible options in `src/index.html`
-- product metadata in `src/main.js`
-
-When changing recipes, prices, images, or names, update both places and verify the quick order preview and WhatsApp message still match. A good future refactor is to define products once in JavaScript and render the `<select>` options from that data.
+Product options are generated from `src/data/products.js`. When changing recipes, categories, prices, images, or the WhatsApp number, update that file first and run `npm test`.
 
 ## Known Codebase Issues
 
-- `src/style.css` is large and includes styles for removed or inactive sections.
-- `src/main.js` includes behavior for product cards, gallery, slideshow, story video, and modal UI that is mostly unused by the current page.
-- `src/index.html` contains commented-out feature sections and a root-level product modal that is not connected to the visible quick order flow.
+- `src/style.css` is still the largest file and should stay focused on active sections only.
 - Product names, ingredients, and WhatsApp copy should be treated as customer-facing business content, not placeholder code.
 
 See `docs/improvement-notes.md` for prioritized cleanup ideas.
@@ -79,9 +75,10 @@ See `docs/improvement-notes.md` for prioritized cleanup ideas.
 1. Read `README.md`, this file, and any relevant file under `docs/`.
 2. Inspect the actual HTML/CSS/JS before editing.
 3. Make the smallest coherent change.
-4. Run `npm run build`.
-5. If the change affects layout, preview on mobile and desktop widths.
-6. Summarize changed files and any remaining risk.
+4. Run `npm test`.
+5. Run `npm run build`.
+6. If the change affects layout, preview on mobile and desktop widths.
+7. Summarize changed files and any remaining risk.
 
 ## Design Judgment
 
